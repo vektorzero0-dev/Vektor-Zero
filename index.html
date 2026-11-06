@@ -121,7 +121,7 @@
                             ▶ RUN CODE & LIHAT HASIL KARYA
                         </button>
 
-                        <!-- Kotak Hasil Preview -->
+                        <!-- Kotak Hasil Preview (Kosong di awal, baru muncul pas tombol RUN diklik) -->
                         <div class="space-y-1 pt-1">
                             <label class="text-[10px] text-gray-400">Hasil Karya (Live Preview):</label>
                             <div id="previewContainer" class="w-full bg-white border border-gray-800 rounded p-3 min-h-[90px] flex items-center justify-center overflow-hidden">
@@ -244,17 +244,19 @@
         }
         setInterval(drawMatrix, 50);
 
-        // Lab 01: Live Code Runner (Menjalankan hasil karya web statis)
+        // Lab 01: Live Code Runner (Hanya merender hasil ketika tombol RUN diklik)
         function runCode() {
             const code = document.getElementById('codeEditor').value;
             const container = document.getElementById('previewContainer');
             
-            // Render kode HTML langsung ke dalam container preview secara aman
+            if (!code.trim()) {
+                container.innerHTML = "<span class='text-red-500 text-[11px] font-sans'>[Error: Editor kosong!]</span>";
+                return;
+            }
+
+            // Render kode HTML ke dalam kotak preview
             container.innerHTML = code;
         }
-
-        // Jalankan pratinjau awal saat pertama kali dibuka
-        runCode();
 
         // Lab 02: Live Username Recon (Sherlock Web Engine)
         async function runSherlockScan() {
