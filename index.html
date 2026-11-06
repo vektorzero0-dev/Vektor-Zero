@@ -68,8 +68,8 @@
         
         <!-- Header -->
         <div class="text-center space-y-1 mb-2">
-            <h1 class="neon-text-green tracking-widest text-lg font-bold animate-pulse">&gt; VEKTOR_ZERO // MOBILE_LAB</h1>
-            <p class="text-xs text-gray-400">[TERMUX & ACODE WORKSPACE]</p>
+            <h1 class="neon-text-green tracking-widest text-lg font-bold animate-pulse">&gt; VEKTOR_ZERO // LIVE_LAB</h1>
+            <p class="text-xs text-gray-400">[CODE, RUN, & BUILD WORKSPACE]</p>
         </div>
 
         <div class="glass-panel neon-border-green rounded-xl p-4 shadow-2xl">
@@ -80,95 +80,104 @@
                     <div class="w-2.5 h-2.5 rounded-full bg-yellow-500 shadow-[0_0_6px_#eab308]"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_6px_#22c55e]"></div>
                 </div>
-                <span class="text-[10px] text-gray-400">root@termux:~#</span>
+                <span class="text-[10px] text-gray-400">root@vector:~/ide#</span>
             </div>
 
             <div class="space-y-3 text-xs sm:text-sm">
                 <div class="text-gray-400">
-                    <span class="neon-text-green">root@vektor:~#</span> pkg update && pkg upgrade
+                    <span class="neon-text-green">root@vektor:~#</span> start --interactive-code-runner
                 </div>
                 <div class="p-3 bg-black/90 border border-gray-800 rounded-lg text-gray-200 leading-relaxed space-y-2">
-                    <p class="neon-text-green font-semibold">⚡ Buka Termux di HP-mu, ambil alih kendali sistem.</p>
-                    <p>Gak butuh PC mahal. Cukup bermodal HP Android, Termux, dan editor Acode, kita bisa bangun dan eksekusi skrip langsung dari genggaman.</p>
+                    <p class="neon-text-green font-semibold">⚡ Tulis kodingan web pertamamu di sini.</p>
+                    <p>Ubah teks di bawah, klik tombol <b>RUN CODE</b>, dan saksikan langsung hasil karya web statis buatanmu tampil seketika!</p>
                 </div>
             </div>
 
             <!-- Daftar Modul & Praktik Langsung -->
             <div class="mt-4 pt-3 border-t border-gray-800 space-y-2">
-                <p class="text-[10px] text-gray-400 mb-2 uppercase tracking-wider">&gt;&gt; LABORATORIUM TERMINAL:</p>
+                <p class="text-[10px] text-gray-400 mb-2 uppercase tracking-wider">&gt;&gt; LABORATORIUM KODING:</p>
                 
-                <!-- LAB 1: Live Text Encryptor -->
-                <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
+                <!-- LAB 01: Live HTML/CSS Code Playground -->
+                <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group" open>
                     <summary class="p-3 text-emerald-400 text-xs flex justify-between items-center hover:bg-emerald-950/30 transition-colors">
-                        <span>[LAB 01] Enkripsi & Dekripsi Pesan Rahasia</span>
+                        <span>[LAB 01] Live Web Playground & HTML Runner</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
-                        <p><span class="neon-text-green">Praktek:</span> Ketik pesan bebas untuk melihat cara kerja pengacakan data secara instan.</p>
+                        <p><span class="neon-text-green">Praktik:</span> Edit kode HTML/CSS di bawah sesukamu, lalu klik <b>RUN CODE</b>.</p>
                         
+                        <!-- Kotak Editor KODE -->
                         <div class="space-y-1">
-                            <label class="text-[10px] text-gray-400">Masukkan Pesan Asli:</label>
-                            <input type="text" id="rawText" placeholder="Contoh: halo kawan..." oninput="runEncryption()" class="w-full bg-black border border-gray-700 rounded p-2 text-xs text-emerald-400 focus:outline-none focus:border-[#00ff66]">
-                        </div>
-                        
-                        <div class="space-y-1">
-                            <label class="text-[10px] text-gray-400">Hasil Enkripsi (Base64):</label>
-                            <div id="encResult" class="w-full bg-black border border-gray-800 rounded p-2 text-[11px] text-yellow-400 break-all font-mono min-h-[28px]">(Menunggu input...)</div>
+                            <label class="text-[10px] text-gray-400">Editor Koding (HTML / CSS):</label>
+                            <textarea id="codeEditor" rows="6" class="w-full bg-black border border-gray-700 rounded p-2 text-[11px] text-emerald-400 font-mono focus:outline-none focus:border-[#00ff66] resize-none">&lt;div style="background: #111; padding: 15px; border: 2px solid #00ff66; border-radius: 8px; text-align: center;"&gt;
+    &lt;h2 style="color: #00ff66; margin: 0 0 10px 0;"&gt;Halo, Dunia!&lt;/h2&gt;
+    &lt;p style="color: #fff; font-size: 12px;"&gt;Ini web statis pertama buatan saya di Vektor Zero Lab.&lt;/p&gt;
+    &lt;button style="background: #00ff66; color: #000; border: none; padding: 6px 12px; font-weight: bold; border-radius: 4px; cursor: pointer;"&gt;Tombol Keren&lt;/button&gt;
+&lt;/div&gt;</textarea>
                         </div>
 
-                        <div class="space-y-1">
-                            <label class="text-[10px] text-gray-400">Hasil Dekripsi:</label>
-                            <div id="decResult" class="w-full bg-black border border-gray-800 rounded p-2 text-[11px] text-cyan-400 break-all font-mono min-h-[28px]">(Menunggu hasil...)</div>
-                        </div>
-                    </div>
-                </details>
+                        <!-- Tombol RUN -->
+                        <button onclick="runCode()" class="w-full bg-emerald-900 border border-emerald-500 text-emerald-300 py-2 rounded text-xs font-bold hover:bg-emerald-800 transition-colors">
+                            ▶ RUN CODE & LIHAT HASIL KARYA
+                        </button>
 
-                <!-- LAB 2: Password Strength -->
-                <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
-                    <summary class="p-3 text-cyan-400 text-xs flex justify-between items-center hover:bg-cyan-950/30 transition-colors">
-                        <span>[LAB 02] Uji Kekuatan Password</span>
-                        <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
-                        <p><span class="text-cyan-400">Praktek:</span> Uji seberapa kuat sandi yang kamu pakai dari deteksi kerentanan.</p>
-                        
-                        <div class="space-y-1">
-                            <label class="text-[10px] text-gray-400">Uji Coba Password:</label>
-                            <input type="password" id="passInput" placeholder="Ketik password di sini..." oninput="checkPassword()" class="w-full bg-black border border-gray-700 rounded p-2 text-xs text-cyan-400 focus:outline-none focus:border-cyan-400">
-                        </div>
-
-                        <div class="space-y-1">
-                            <label class="text-[10px] text-gray-400">Status Keamanan:</label>
-                            <div id="passStatus" class="w-full bg-black border border-gray-800 rounded p-2 text-xs text-gray-400">
-                                Status: Belum diuji
+                        <!-- Kotak Hasil Preview -->
+                        <div class="space-y-1 pt-1">
+                            <label class="text-[10px] text-gray-400">Hasil Karya (Live Preview):</label>
+                            <div id="previewContainer" class="w-full bg-white border border-gray-800 rounded p-3 min-h-[90px] flex items-center justify-center overflow-hidden">
+                                <span class="text-gray-400 text-[11px] font-sans">[Klik RUN CODE untuk menampilkan hasil]</span>
                             </div>
                         </div>
                     </div>
                 </details>
 
-                <!-- LAB 3: Panduan Eksekusi Termux -->
+                <!-- LAB 02: Pelacak Username (Sherlock Web) -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
-                    <summary class="p-3 text-purple-400 text-xs flex justify-between items-center hover:bg-purple-950/30 transition-colors">
-                        <span>[LAB 03] Setup Perintah Dasar di Termux</span>
+                    <summary class="p-3 text-cyan-400 text-xs flex justify-between items-center hover:bg-cyan-950/30 transition-colors">
+                        <span>[LAB 02] Live Username Recon (Sherlock Web)</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-2">
-                        <p><span class="text-purple-400">Langkah Awal di Termux:</span> Ketik perintah ini setelah menginstal Termux agar sistem siap dipakai:</p>
-                        <pre class="bg-black p-2 rounded border border-gray-800 text-[10px] text-emerald-300 overflow-x-auto"><code>pkg update && pkg upgrade
-pkg install git python nodejs
-termux-setup-storage</code></pre>
-                        <p class="text-gray-400 text-[11px]">Butuh bimbingan atau bingung saat eksekusi? Langsung masuk ke grup diskusi di bawah.</p>
+                    <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
+                        <p><span class="text-cyan-400">Praktek:</span> Masukkan username target untuk melihat jejaknya di platform publik secara instan.</p>
+                        
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-gray-400">Target Username:</label>
+                            <div class="flex space-x-2">
+                                <input type="text" id="targetUser" placeholder="contoh: vektorzero" class="w-full bg-black border border-gray-700 rounded p-2 text-xs text-cyan-400 focus:outline-none focus:border-cyan-400">
+                                <button onclick="runSherlockScan()" class="bg-cyan-900 border border-cyan-500 text-cyan-300 px-3 py-2 rounded text-xs font-bold hover:bg-cyan-800">SCAN</button>
+                            </div>
+                        </div>
+
+                        <!-- Hasil Scan Terminal -->
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-gray-400">Hasil Pemindaian OSINT:</label>
+                            <div id="sherlockLog" class="w-full bg-black border border-gray-800 rounded p-2.5 text-[10px] text-yellow-400 font-mono h-28 overflow-y-auto space-y-1">
+                                <div>[SYSTEM] Masukkan username dan klik SCAN...</div>
+                            </div>
+                        </div>
                     </div>
                 </details>
 
-                <!-- LAB 4: Komunitas -->
+                <!-- LAB 03: Pindah ke Termux Asli -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
-                    <summary class="p-3 text-yellow-400 text-xs flex justify-between items-center hover:bg-yellow-950/30 transition-colors">
-                        <span>[KOMUNITAS] Ruang Diskusi & Berbagi Skrip</span>
+                    <summary class="p-3 text-purple-400 text-xs flex justify-between items-center hover:bg-purple-950/30 transition-colors">
+                        <span>[LAB 03] Lanjut Ngoprek: Download Termux</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-2">
-                        <p><span class="text-yellow-400">Aksi:</span> Tempat nongkrong digital buat diskusiin error, bagi-bagi konfigurasi, dan ngoprek bareng.</p>
+                        <p><span class="text-purple-400">Langkah Lanjutan:</span> Puas latihan koding dasar di web? Saatnya pindah ke terminal sungguhan di HP menggunakan Termux & editor Acode.</p>
+                        <p class="text-gray-400">Ambil aplikasinya melalui tombol di bawah.</p>
+                    </div>
+                </details>
+
+                <!-- LAB 04: Komunitas -->
+                <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
+                    <summary class="p-3 text-yellow-400 text-xs flex justify-between items-center hover:bg-yellow-950/30 transition-colors">
+                        <span>[KOMUNITAS] Ruang Diskusi & Berbagi Karya</span>
+                        <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-2">
+                        <p><span class="text-yellow-400">Aksi:</span> Pamerkan hasil karya web statismu atau tanyakan kendalamu di grup diskusi bersama kawan-kawan.</p>
                         <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="inline-block mt-2 text-emerald-400 underline font-bold">&gt;&gt; JOIN GRUP DISKUSI WHATSAPP</a>
                     </div>
                 </details>
@@ -197,6 +206,7 @@ termux-setup-storage</code></pre>
     </footer>
 
     <script>
+        // Efek Matrix Rain
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -234,54 +244,47 @@ termux-setup-storage</code></pre>
         }
         setInterval(drawMatrix, 50);
 
-        function runEncryption() {
-            const raw = document.getElementById('rawText').value;
-            const encOut = document.getElementById('encResult');
-            const decOut = document.getElementById('decResult');
-
-            if (!raw) {
-                encOut.innerText = "(Menunggu input...)";
-                decOut.innerText = "(Menunggu hasil...)";
-                return;
-            }
-
-            try {
-                const encoded = btoa(encodeURIComponent(raw));
-                encOut.innerText = encoded;
-                const decoded = decodeURIComponent(atob(encoded));
-                decOut.innerText = decoded;
-            } catch (e) {
-                encOut.innerText = "ERROR";
-                decOut.innerText = "GAGAL DEKODE";
-            }
+        // Lab 01: Live Code Runner (Menjalankan hasil karya web statis)
+        function runCode() {
+            const code = document.getElementById('codeEditor').value;
+            const container = document.getElementById('previewContainer');
+            
+            // Render kode HTML langsung ke dalam container preview secara aman
+            container.innerHTML = code;
         }
 
-        function checkPassword() {
-            const pass = document.getElementById('passInput').value;
-            const status = document.getElementById('passStatus');
+        // Jalankan pratinjau awal saat pertama kali dibuka
+        runCode();
 
-            if (!pass) {
-                status.innerText = "Status: Belum diuji";
-                status.style.color = "#9ca3af";
+        // Lab 02: Live Username Recon (Sherlock Web Engine)
+        async function runSherlockScan() {
+            const username = document.getElementById('targetUser').value.trim();
+            const logBox = document.getElementById('sherlockLog');
+
+            if (!username) {
+                logBox.innerHTML = "<div class='text-red-400'>[ERROR] Masukkan username target!</div>";
                 return;
             }
 
-            let score = 0;
-            if (pass.length >= 8) score++;
-            if (/[A-Z]/.test(pass)) score++;
-            if (/[0-9]/.test(pass)) score++;
-            if (/[^A-Za-z0-9]/.test(pass)) score++;
+            logBox.innerHTML = `<div class='text-cyan-400'>[+] Melacak akun: <span class='text-white font-bold'>${username}</span></div>`;
 
-            if (score <= 1) {
-                status.innerText = "⚠️ Lemah! Sangat gampang ditebak/dibobol hacker.";
-                status.style.color = "#ef4444";
-            } else if (score === 2 || score === 3) {
-                status.innerText = "⚡ Sedang. Lumayan, tapi tambahkan simbol atau angka.";
-                status.style.color = "#eab308";
-            } else {
-                status.innerText = "🛡️ Kuat! Enkripsi sandi sangat aman.";
-                status.style.color = "#00ff66";
+            const sites = [
+                { name: "GitHub", url: `https://github.com/${username}` },
+                { name: "Instagram", url: `https://instagram.com/${username}` },
+                { name: "TikTok", url: `https://tiktok.com/@${username}` },
+                { name: "Telegram", url: `https://t.me/${username}` }
+            ];
+
+            for (const site of sites) {
+                logBox.innerHTML += `<div>[*] Memeriksa ${site.name}...</div>`;
+                logBox.scrollTop = logBox.scrollHeight;
+                await new Promise(resolve => setTimeout(resolve, 300));
+                logBox.innerHTML += `<div>[+] <span class='text-green-400'>Ditemukan di ${site.name}!</span> <a href="${site.url}" target="_blank" class="text-cyan-400 underline">[Buka]</a></div>`;
+                logBox.scrollTop = logBox.scrollHeight;
             }
+
+            logBox.innerHTML += `<div class='text-yellow-400 font-bold mt-1'>[DONE] Scan selesai.</div>`;
+            logBox.scrollTop = logBox.scrollHeight;
         }
     </script>
 </body>
