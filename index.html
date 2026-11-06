@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vektor Zero // Terminal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        terminal: {
+                            bg: '#0a0a0c',
+                            card: '#12131a',
+                            green: '#00ff66',
+                            dim: '#8a8f98'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['Courier New', Courier, monospace]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-terminal-bg text-terminal-dim font-mono min-h-screen flex flex-col justify-between p-4 md:p-8">
+
+    <!-- Container Utama -->
+    <main class="max-w-xl mx-auto w-full my-auto space-y-6">
+        
+        <!-- Header / Terminal Bar -->
+        <div class="bg-terminal-card border border-gray-800 rounded-lg p-4 shadow-2xl shadow-green-950/20">
+            <div class="flex items-center space-x-2 mb-4 border-b border-gray-800 pb-3">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="text-xs text-gray-500 ml-2">zeeo@vektor-zero:~#</span>
+            </div>
+
+            <!-- Teks Provokatif & Menantang -->
+            <div class="space-y-4 text-sm md:text-base">
+                <p class="text-gray-300">
+                    <span class="text-terminal-green">></span> Bosen kalah slot mulu tapi nekat lanjut karena 'siapa tau hoki'? Bosen denger ceramah orang yang gak ngerti realita jalanan?
+                </p>
+                <p class="text-gray-400">
+                    <span class="text-terminal-green">></span> Selamat datang di node privat Vektor Zero. Tempat di mana kita belajar mengontrol sistem, bukan dikendalikan algoritma bandar.
+                </p>
+                <div class="p-3 bg-black/40 border border-gray-800 rounded text-xs text-yellow-400">
+                    ⚠️ PERINGATAN: Jika mental lu ciut atau cuma mau nyari drama, tutup tab ini sekarang.
+                </div>
+            </div>
+
+            <!-- Area Interaksi / Terminal Input Palsu -->
+            <div class="mt-6 space-y-3">
+                <div id="terminal-output" class="text-xs text-terminal-green space-y-1"></div>
+                
+                <div class="flex items-center space-x-2 bg-black/60 border border-gray-800 rounded p-2">
+                    <span class="text-terminal-green">$</span>
+                    <input type="text" id="user-input" placeholder="ketik 'mulai' atau 'siapa_vektor'..." 
+                           class="bg-transparent text-gray-200 focus:outline-none w-full text-sm" autofocus>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Aksi Utama -->
+        <div class="space-y-3">
+            <button onclick="triggerAccess()" class="w-full bg-terminal-green text-black font-bold py-3 px-4 rounded-lg hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/10 tracking-wider text-sm">
+                [ AKSES SISTEM / START ]
+            </button>
+            
+            <a href="https://wa.me/" target="_blank" class="block text-center w-full bg-terminal-card border border-gray-800 text-gray-300 font-semibold py-3 px-4 rounded-lg hover:border-terminal-green hover:text-terminal-green transition-all text-xs">
+                > TERHUBUNG DENGAN VEKTOR ZERO (OFFLINE SESSION)
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-gray-600 mt-8">
+        // PROTOCOL INITIALIZED BY ZEEO // VEKTOR ZERO
+    </footer>
+
+    <!-- Skrip Interaktif Sederhana -->
+    <script>
+        const inputField = document.getElementById('user-input');
+        const outputArea = document.getElementById('terminal-output');
+
+        inputField.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                let val = inputField.value.trim().toLowerCase();
+                let response = "";
+
+                if (val === 'mulai') {
+                    response = "[+] Menginisialisasi protokol Vektor Zero...\n[+] Akses diberikan. Silakan tekan tombol Akses Sistem di bawah.";
+                } else if (val === 'siapa_vektor' || val === 'siapa lu') {
+                    response = "[+] Vektor Zero (Zeeo). Praktisi, developer, kawan ngobrol tanpa kepura-puraan.";
+                } else if (val === 'judol' || val === 'slot') {
+                    response = "[-] ERROR: Sistem menolak racun bandar. Stop buang duit ke slot, bro.";
+                } else {
+                    response = "[?] Perintah tidak dikenal. Ketik 'mulai' atau 'siapa_vektor'.";
+                }
+
+                outputArea.innerHTML += `<div>$ ${inputField.value}</div><div class="text-gray-400">${response}</div>`;
+                inputField.value = '';
+                outputArea.scrollTop = outputArea.scrollHeight;
+            }
+        });
+
+        function triggerAccess() {
+            outputArea.innerHTML += `<div class="text-terminal-green">[+] Membuka jalur aman... Selamat datang di node privat Vektor Zero.</div>`;
+            setTimeout(() => {
+                alert("Sistem siap! Silakan arahkan mereka ke materi oprek atau titik kumpul.");
+            }, 500);
+        }
+    </script>
+</body>
+</html>
