@@ -41,16 +41,16 @@
             background-color: #1aff80;
             box-shadow: 0 0 25px rgba(0, 255, 102, 0.8), 0 0 40px rgba(0, 255, 102, 0.4);
         }
-        .secondary-button {
-            background: rgba(0, 255, 102, 0.1);
+        .termux-bridge-button {
+            background: rgba(0, 255, 102, 0.12);
             border: 1px solid #00ff66;
             color: #00ff66;
             font-weight: bold;
             transition: all 0.3s ease;
         }
-        .secondary-button:hover {
+        .termux-bridge-button:hover {
             background: rgba(0, 255, 102, 0.25);
-            box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.5);
         }
         details > summary { list-style: none; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
@@ -68,8 +68,8 @@
         
         <!-- Header -->
         <div class="text-center space-y-1 mb-2">
-            <h1 class="neon-text-green tracking-widest text-lg font-bold animate-pulse">&gt; VEKTOR_ZERO // CYBER_SANDBOX</h1>
-            <p class="text-xs text-gray-400">[INTERACTIVE LAB: BELAJAR & PRAKTEK LANGSUNG]</p>
+            <h1 class="neon-text-green tracking-widest text-lg font-bold animate-pulse">&gt; VEKTOR_ZERO // MOBILE_LAB</h1>
+            <p class="text-xs text-gray-400">[TERMUX & ACODE WORKSPACE]</p>
         </div>
 
         <div class="glass-panel neon-border-green rounded-xl p-4 shadow-2xl">
@@ -80,31 +80,31 @@
                     <div class="w-2.5 h-2.5 rounded-full bg-yellow-500 shadow-[0_0_6px_#eab308]"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_6px_#22c55e]"></div>
                 </div>
-                <span class="text-[10px] text-gray-400">root@vektor-zero:~# active_labs</span>
+                <span class="text-[10px] text-gray-400">root@termux:~#</span>
             </div>
 
             <div class="space-y-3 text-xs sm:text-sm">
                 <div class="text-gray-400">
-                    <span class="neon-text-green">root@vektor:~#</span> load --interactive-modules
+                    <span class="neon-text-green">root@vektor:~#</span> pkg update && pkg upgrade
                 </div>
                 <div class="p-3 bg-black/90 border border-gray-800 rounded-lg text-gray-200 leading-relaxed space-y-2">
-                    <p class="neon-text-green font-semibold">⚡ Jangan cuma dibaca. Coba langsung alatnya di bawah!</p>
-                    <p>Di ruang ini, kamu bisa langsung praktik uji enkripsi data, simulasi keamanan sandi, dan mengakses terminal eksternal untuk mulai ngoding.</p>
+                    <p class="neon-text-green font-semibold">⚡ Buka Termux di HP-mu, ambil alih kendali sistem.</p>
+                    <p>Gak butuh PC mahal. Cukup bermodal HP Android, Termux, dan editor Acode, kita bisa bangun dan eksekusi skrip langsung dari genggaman.</p>
                 </div>
             </div>
 
             <!-- Daftar Modul & Praktik Langsung -->
             <div class="mt-4 pt-3 border-t border-gray-800 space-y-2">
-                <p class="text-[10px] text-gray-400 mb-2 uppercase tracking-wider">&gt;&gt; PILIH LABORATORIUM PRAKTIK:</p>
+                <p class="text-[10px] text-gray-400 mb-2 uppercase tracking-wider">&gt;&gt; LABORATORIUM TERMINAL:</p>
                 
-                <!-- LAB 1: Live Text Encryptor & Decryptor -->
+                <!-- LAB 1: Live Text Encryptor -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
                     <summary class="p-3 text-emerald-400 text-xs flex justify-between items-center hover:bg-emerald-950/30 transition-colors">
                         <span>[LAB 01] Enkripsi & Dekripsi Pesan Rahasia</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
-                        <p><span class="neon-text-green">Praktek:</span> Ketik pesan bebas, sistem akan otomatis mengubahnya menjadi sandi (Cipher) dan bisa dikembalikan lagi.</p>
+                        <p><span class="neon-text-green">Praktek:</span> Ketik pesan bebas untuk melihat cara kerja pengacakan data secara instan.</p>
                         
                         <div class="space-y-1">
                             <label class="text-[10px] text-gray-400">Masukkan Pesan Asli:</label>
@@ -117,20 +117,20 @@
                         </div>
 
                         <div class="space-y-1">
-                            <label class="text-[10px] text-gray-400">Hasil Dekripsi (Kembali Normal):</label>
+                            <label class="text-[10px] text-gray-400">Hasil Dekripsi:</label>
                             <div id="decResult" class="w-full bg-black border border-gray-800 rounded p-2 text-[11px] text-cyan-400 break-all font-mono min-h-[28px]">(Menunggu hasil...)</div>
                         </div>
                     </div>
                 </details>
 
-                <!-- LAB 2: Password Strength & Crack Simulator -->
+                <!-- LAB 2: Password Strength -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
                     <summary class="p-3 text-cyan-400 text-xs flex justify-between items-center hover:bg-cyan-950/30 transition-colors">
-                        <span>[LAB 02] Uji Kekuatan Password (Simulator)</span>
+                        <span>[LAB 02] Uji Kekuatan Password</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
-                        <p><span class="text-cyan-400">Praktek:</span> Ketik password yang biasa kamu pakai, dan lihat seberapa cepat sistem mendeteksi tingkat keamanannya.</p>
+                        <p><span class="text-cyan-400">Praktek:</span> Uji seberapa kuat sandi yang kamu pakai dari deteksi kerentanan.</p>
                         
                         <div class="space-y-1">
                             <label class="text-[10px] text-gray-400">Uji Coba Password:</label>
@@ -146,33 +146,29 @@
                     </div>
                 </details>
 
-                <!-- LAB 3: Quick Logic & Code Snippet Preview -->
+                <!-- LAB 3: Panduan Eksekusi Termux -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
                     <summary class="p-3 text-purple-400 text-xs flex justify-between items-center hover:bg-purple-950/30 transition-colors">
-                        <span>[LAB 03] Bedah Logika Script Bot Sederhana</span>
+                        <span>[LAB 03] Setup Perintah Dasar di Termux</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-2">
-                        <p><span class="text-purple-400">Pelajaran:</span> Ini adalah kerangka dasar logika otomatisasi yang biasa dipakai untuk merespon perintah secara instan.</p>
-                        <pre class="bg-black p-2 rounded border border-gray-800 text-[10px] text-emerald-300 overflow-x-auto"><code>// Logika Respon Otomatis
-function handleMessage(msg) {
-  if (msg === "!ping") {
-    return "Pong! Sistem Aktif.";
-  }
-  return "Perintah tidak dikenal.";
-}</code></pre>
-                        <p class="text-gray-400 text-[11px]">Mau belajar cara mengembangkan kode ini jadi bot WhatsApp fungsional pakai HP? Semua dibahas tuntas di grup.</p>
+                        <p><span class="text-purple-400">Langkah Awal di Termux:</span> Ketik perintah ini setelah menginstal Termux agar sistem siap dipakai:</p>
+                        <pre class="bg-black p-2 rounded border border-gray-800 text-[10px] text-emerald-300 overflow-x-auto"><code>pkg update && pkg upgrade
+pkg install git python nodejs
+termux-setup-storage</code></pre>
+                        <p class="text-gray-400 text-[11px]">Butuh bimbingan atau bingung saat eksekusi? Langsung masuk ke grup diskusi di bawah.</p>
                     </div>
                 </details>
 
-                <!-- LAB 4: Masuk Komunitas -->
+                <!-- LAB 4: Komunitas -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
                     <summary class="p-3 text-yellow-400 text-xs flex justify-between items-center hover:bg-yellow-950/30 transition-colors">
-                        <span>[KOMUNITAS] Ruang Diskusi & Proyek Tim</span>
+                        <span>[KOMUNITAS] Ruang Diskusi & Berbagi Skrip</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-2">
-                        <p><span class="text-yellow-400">Aksi:</span> Praktik mandiri itu seru, tapi berkolaborasi jauh lebih cepat bikin jago. Masuk ke grup buat sharing error, nanya script, atau bangun proyek bareng.</p>
+                        <p><span class="text-yellow-400">Aksi:</span> Tempat nongkrong digital buat diskusiin error, bagi-bagi konfigurasi, dan ngoprek bareng.</p>
                         <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="inline-block mt-2 text-emerald-400 underline font-bold">&gt;&gt; JOIN GRUP DISKUSI WHATSAPP</a>
                     </div>
                 </details>
@@ -180,10 +176,10 @@ function handleMessage(msg) {
             </div>
         </div>
 
-        <!-- Tombol Tautan Tambahan: Buka Terminal Online Eksternal -->
+        <!-- Tombol Jembatan Download Termux (Resmi F-Droid) -->
         <div class="space-y-2 pt-1">
-            <a href="https://replit.com/" target="_blank" class="flex items-center justify-center space-x-2 w-full secondary-button py-2.5 px-4 rounded-xl text-xs tracking-wider">
-                <span>💻 BUKA TERMINAL CLOUD (SANDBOX EKSTERNAL)</span>
+            <a href="https://f-droid.org/packages/com.termux/" target="_blank" class="flex items-center justify-center space-x-2 w-full termux-bridge-button py-2.5 px-4 rounded-xl text-xs tracking-wider">
+                <span>📥 DOWNLOAD TERMUX RESMI (F-DROID)</span>
             </a>
         </div>
 
@@ -200,7 +196,6 @@ function handleMessage(msg) {
         // VEKTOR ZERO SYSTEM — ALL RIGHTS RESERVED
     </footer>
 
-    <!-- Skrip Matrix & Interactive Labs -->
     <script>
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
