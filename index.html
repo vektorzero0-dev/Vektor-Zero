@@ -41,11 +41,11 @@
                 <div class="p-3 bg-black border border-gray-800 rounded-lg text-gray-200 leading-relaxed space-y-2">
                     <p class="neon-text font-semibold cyber-glow">⚡ Mau tau cara kerja sistem di balik layar?</p>
                     <p>Jangan cuma jadi user yang cuma nge-scroll HP tiap hari. Di sini kita belajar koding, dasar <i>cyber security</i>, dan cara nge-build tools sendiri dari nol.</p>
-                    <p class="text-gray-400 text-xs">Pilih perintah di bawah buat intip apa yang bisa kita bedah bareng.</p>
+                    <p class="text-gray-400 text-xs">Uji coba tools kriptografi di bawah ini untuk melihat bagaimana teks biasa diubah menjadi sandi rahasia secara instan.</p>
                 </div>
             </div>
 
-            <!-- Tombol Perintah Fokus Koding & Cyber -->
+            <!-- Tombol Perintah & Tools Ril -->
             <div class="mt-4 pt-3 border-t border-gray-800 space-y-2">
                 <p class="text-[10px] text-gray-500 mb-2 uppercase tracking-wider">&gt;&gt; PILIH PROTOKOL (KLIK UNTUK BUKA):</p>
                 
@@ -60,14 +60,31 @@
                     </div>
                 </details>
 
-                <!-- Opsi 2 -->
+                <!-- Opsi 2 (REAL RIL TOOLS): Live Text Encryptor / Cipher Generator -->
                 <details class="bg-black border border-gray-800 rounded-lg overflow-hidden group">
                     <summary class="p-3 text-cyan-400 text-xs flex justify-between items-center hover:bg-cyan-950/30 transition-colors">
-                        <span>$ cyber_security.exe</span>
+                        <span>$ live_cipher.exe (Alat Sandi Rahasia)</span>
                         <span class="text-gray-500 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <div class="p-3 border-t border-gray-800/80 bg-gray-950 text-gray-300 text-xs leading-relaxed">
-                        <span class="text-cyan-400">[ANALYZE]</span> Penasaran gimana cara kerja jaringan, sistem keamanan, atau ngamanin data dari celah kerentanan? Kita bedah konsep dasarnya secara santai tanpa teori puyeng.
+                    <div class="p-3 border-t border-gray-800/80 bg-gray-950 text-gray-300 text-xs leading-relaxed space-y-3">
+                        <p class="text-cyan-400">[REAL CIPHER GENERATOR]:</p>
+                        <p class="text-[11px] text-gray-400">Ketik apa saja di bawah, dan sistem akan langsung mengenkripsinya menjadi sandi rahasia secara *real-time*:</p>
+                        
+                        <!-- Input Asli -->
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-gray-500">Ketik Pesan Bebas:</label>
+                            <input type="text" id="userInputText" placeholder="Contoh: halo abang zeeo..." oninput="encryptText()" class="w-full bg-black border border-gray-700 rounded p-2 text-xs text-neon focus:outline-none">
+                        </div>
+
+                        <!-- Hasil Enkripsi -->
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-gray-500">Hasil Sandi Terenkripsi:</label>
+                            <div id="resultOutput" class="w-full bg-black border border-gray-800 rounded p-2 text-[11px] text-yellow-400 break-all font-mono min-h-[32px]">
+                                (Menunggu input teks...)
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-gray-400 pt-1">Gampang banget kan? Cuma butuh beberapa baris kode JavaScript buat bikin alat enkripsi sendiri. Mau tahu cara bikin tools yang lebih canggih dari HP? Lanjut masuk ke lingkaran.</p>
                     </div>
                 </details>
 
@@ -88,8 +105,9 @@
                         <span>$ connect_to_basecamp</span>
                         <span class="text-gray-500 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <div class="p-3 border-t border-gray-800/80 bg-gray-950 text-gray-300 text-xs leading-relaxed">
-                        <span class="text-yellow-400">[ACTION]</span> Capek belajar sendiri lewat layar? Waktunya masuk lingkaran. Ngoprek bareng, diskusi teknologi, dan bangun proyek nyata bareng Vektor Zero.
+                    <div class="p-3 border-t border-gray-800/80 bg-gray-950 text-gray-300 text-xs leading-relaxed space-y-2">
+                        <p><span class="text-yellow-400">[ACTION]</span> Capek belajar sendiri lewat layar? Waktunya masuk lingkaran. Ngoprek bareng, diskusi teknologi, dan bangun proyek nyata bareng Vektor Zero.</p>
+                        <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="inline-block mt-1 text-emerald-400 underline font-bold">&gt;&gt; KLIK DI SINI UNTUK JOIN GRUP WHATSAPP</a>
                     </div>
                 </details>
 
@@ -98,8 +116,8 @@
 
         <!-- Tombol Utama WhatsApp -->
         <div class="space-y-2 pt-1">
-            <a href="https://wa.me/" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-[#00ff66] text-black font-bold py-3 px-4 rounded-xl text-xs tracking-wider shadow-lg shadow-emerald-500/10 hover:bg-[#00cc52] transition-colors">
-                <span>⚡ TERHUBUNG DENGAN VEKTOR ZERO</span>
+            <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-[#00ff66] text-black font-bold py-3 px-4 rounded-xl text-xs tracking-wider shadow-lg shadow-emerald-500/10 hover:bg-[#00cc52] transition-colors">
+                <span>⚡ GABUNG GRUP WHATSAPP // VEKTOR ZERO</span>
             </a>
         </div>
 
@@ -108,5 +126,26 @@
     <footer class="text-center text-[10px] text-gray-600 mt-4">
         // VEKTOR ZERO SYSTEM — ALL RIGHTS RESERVED
     </footer>
+
+    <!-- Script Ril untuk Tools Enkripsi Teks -->
+    <script>
+        function encryptText() {
+            const input = document.getElementById('userInputText').value;
+            const output = document.getElementById('resultOutput');
+            
+            if (!input) {
+                output.innerText = "(Menunggu input teks...)";
+                return;
+            }
+
+            // Menggunakan btoa (Base64 encoding bawaan browser yang murni & real)
+            try {
+                const encoded = btoa(encodeURIComponent(input));
+                output.innerText = "ENC_V1::" + encoded;
+            } catch (e) {
+                output.innerText = "ERROR: Karakter tidak valid.";
+            }
+        }
+    </script>
 </body>
 </html>
