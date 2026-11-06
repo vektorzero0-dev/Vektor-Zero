@@ -1,135 +1,71 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vektor Zero // Terminal</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkbg: '#050507',
-                        cardbg: '#0f1117',
-                        neon: '#00ff66',
-                        neondim: '#00cc52'
-                    },
-                    fontFamily: {
-                        mono: ['Courier New', Courier, monospace]
-                    }
-                }
-            }
+    <style>
+        body {
+            background-color: #050507;
+            color: #d1d5db;
+            font-family: monospace;
         }
-    </script>
+        .neon-text {
+            color: #00ff66;
+        }
+        .neon-border {
+            border-color: #00ff66;
+        }
+    </style>
 </head>
-<body class="bg-darkbg text-gray-300 font-mono min-h-screen flex flex-col justify-between p-4 selection:bg-neon selection:text-black">
+<body class="min-h-screen flex flex-col justify-between p-4">
 
     <!-- Container Utama -->
     <main class="max-w-md mx-auto w-full my-auto space-y-4">
         
-        <!-- Header Profil / Brand -->
+        <!-- Header Profil -->
         <div class="text-center space-y-1 mb-2">
-            <h1 class="text-neon font-bold tracking-widest text-lg animate-pulse">&gt; VEKTOR_ZERO // ZEEO</h1>
-            <p class="text-xs text-gray-500">[SECURE_NODE v2.0 // NO_BS_ZONE]</p>
+            <h1 class="neon-text font-bold tracking-widest text-lg">&gt; VEKTOR_ZERO // ZEEO</h1>
+            <p class="text-xs text-gray-500">[SECURE_NODE v2.1 // NO_BS_ZONE]</p>
         </div>
 
         <!-- Terminal Card Utama -->
-        <div class="bg-cardbg border border-gray-800 rounded-xl p-4 shadow-2xl shadow-neon/5 relative overflow-hidden">
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 shadow-2xl">
             <!-- Top bar window -->
-            <div class="flex items-center justify-between mb-3 border-b border-gray-800/80 pb-2">
+            <div class="flex items-center justify-between mb-3 border-b border-gray-800 pb-2">
                 <div class="flex items-center space-x-1.5">
-                    <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                 </div>
-                <span class="text-[10px] text-gray-500 tracking-wider">bash - mobile_terminal</span>
+                <span class="text-[10px] text-gray-500">bash - mobile_terminal</span>
             </div>
 
             <!-- Layar Teks Terminal -->
-            <div id="terminal-screen" class="space-y-3 text-xs sm:text-sm">
+            <div class="space-y-3 text-xs sm:text-sm">
                 <div class="text-gray-400">
-                    <span class="text-neon">root@vektor:~#</span> init_protocol --target=reality
+                    <span class="neon-text">root@vektor:~#</span> init_protocol --target=reality
                 </div>
-                <div class="p-3 bg-black/60 border border-gray-800/80 rounded-lg text-gray-200 leading-relaxed space-y-2">
-                    <p class="text-neon font-semibold">⚡ Bosen jadi penonton di HP doang?</p>
+                <div class="p-3 bg-black border border-gray-800 rounded-lg text-gray-200 leading-relaxed space-y-2">
+                    <p class="neon-text font-semibold">⚡ Bosen jadi penonton di HP doang?</p>
                     <p>Lu capek kalah slot/judol terus, tapi pasrah karena gak tau mau ngapain? Atau muak denger ceramah yang gak nyambung sama realita jalanan?</p>
                     <p class="text-gray-400 text-xs">Di sini bukan tempat buat sok suci. Ini tempat buat ngontrol sistem hidup lu dari nol.</p>
                 </div>
                 
-                <!-- Log Output Interaktif -->
+                <!-- Log Output Interaktif (Hasil Klik Tombol Muncul Disini) -->
                 <div id="log-output" class="space-y-2"></div>
             </div>
 
-            <!-- Tombol Pintas Cepat (Quick Actions - Gak harus ngetik manual) -->
-            <div class="mt-4 pt-3 border-t border-gray-800/80">
-                <p class="text-[10px] text-gray-500 mb-2 uppercase tracking-wider">>> PILIH PERINTAH CEPAT:</p>
+            <!-- Tombol Pintas Cepat (Quick Actions) -->
+            <div class="mt-4 pt-3 border-t border-gray-800">
+                <p class="text-[10px] text-gray-500 mb-2 uppercase tracking-wider">&gt;&gt; PILIH PERINTAH CEPAT:</p>
                 <div class="grid grid-cols-2 gap-2">
-                    <button onclick="runCommand('mulai')" class="bg-black/40 hover:bg-neon hover:text-black border border-gray-800 hover:border-neon text-neon text-xs py-2 px-3 rounded transition-all text-left font-mono">
+                    <button type="button" onclick="runCommand('mulai')" class="bg-black hover:bg-emerald-950 border border-gray-800 text-emerald-400 text-xs py-2 px-3 rounded text-left font-mono active:scale-95 transition-transform">
                         $ ./mulai.sh
                     </button>
-                    <button onclick="runCommand('judol')" class="bg-black/40 hover:bg-red-500 hover:text-black border border-gray-800 hover:border-red-500 text-red-400 text-xs py-2 px-3 rounded transition-all text-left font-mono">
+                    <button type="button" onclick="runCommand('judol')" class="bg-black hover:bg-red-950 border border-gray-800 text-red-400 text-xs py-2 px-3 rounded text-left font-mono active:scale-95 transition-transform">
                         $ cek_slot.exe
                     </button>
-                    <button onclick="runCommand('siapa')" class="bg-black/40 hover:bg-neon hover:text-black border border-gray-800 hover:border-neon text-gray-300 text-xs py-2 px-3 rounded transition-all text-left font-mono">
-                        $ whoami
-                    </button>
-                    <button onclick="runCommand('kumpul')" class="bg-black/40 hover:bg-neon hover:text-black border border-gray-800 hover:border-neon text-yellow-400 text-xs py-2 px-3 rounded transition-all text-left font-mono">
-                        $ basecamp_ IRL
-                    </button>
-                </div>
-            </div>
-
-            <!-- Input Manual (Opsional kalau mau ketik sendiri) -->
-            <div class="mt-3 flex items-center space-x-2 bg-black/80 border border-gray-800 rounded-lg px-3 py-2">
-                <span class="text-neon text-xs">$</span>
-                <input type="text" id="user-input" placeholder="ketik perintah atau klik tombol di atas..." 
-                       class="bg-transparent text-gray-200 focus:outline-none w-full text-xs font-mono">
-            </div>
-        </div>
-
-        <!-- Tombol Hubung Utama -->
-        <div class="space-y-2 pt-1">
-            <a href="https://wa.me/" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-neon text-black font-bold py-3 px-4 rounded-xl hover:bg-neondim transition-all shadow-lg shadow-neon/10 text-xs tracking-wider">
-                <span>⚡ TERHUBUNG LANGSUNG DENGAN ZEEO</span>
-            </a>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="text-center text-[10px] text-gray-600 mt-4">
-        // VEKTOR ZERO SYSTEM — ALL RIGHTS RESERVED
-    </footer>
-
-    <!-- Script Interaktif yang Kaya & Responsif -->
-    <script>
-        const inputField = document.getElementById('user-input');
-        const logOutput = document.getElementById('log-output');
-
-        function appendLog(command, response) {
-            logOutput.innerHTML += `
-                <div class="bg-black/40 border border-gray-800/50 p-2.5 rounded-lg space-y-1 animate-fadeIn">
-                    <div class="text-gray-500 text-[10px]">$ ${command}</div>
-                    <div class="text-gray-300 text-xs leading-relaxed">${response}</div>
-                </div>
-            `;
-            // Auto scroll ke bawah
-            logOutput.scrollTop = logOutput.scrollHeight;
-        }
-
-        function runCommand(cmd) {
-            let response = "";
-            let commandText = cmd;
-
-            if (cmd === 'mulai') {
-                commandText = "./mulai.sh";
-                response = "<span class='text-neon'>[OK]</span> Sistem mendeteksi potensi besar. Lu gak harus jadi korban sistem atau ikut-ikutan tren bodoh. Mari bangun skill nyata dari HP lu sendiri.";
-            } else if (cmd === 'judol') {
-                commandText = "cek_slot.exe";
-                response = "<span class='text-red-400'>[WARNING]</span> Bandar selalu menang, bro. Algoritma dirancang buat nguras dompet dan mental lu pelan-pelan. Stop buang waktu di sana.";
-            } else if (cmd === 'siapa') {
-                commandText = "whoami";
-                response = "<span class='text-neon'>[INFO]</span> Vektor Zero (Zeeo). Developer, prakt
+                    <button type="button" onclick="runCommand('siapa')" class="bg-black hover:bg-emerald-950 border border-gray-800 text-gray-300 text-
