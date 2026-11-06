@@ -12,7 +12,6 @@
             font-family: monospace; 
             overflow-x: hidden;
         }
-        /* Canvas Matrix Rain di Background */
         #matrix-canvas {
             position: fixed;
             top: 0;
@@ -23,15 +22,13 @@
             opacity: 0.25;
             pointer-events: none;
         }
-        
-        /* Efek Neon Glow Khas Cyberpunk */
         .neon-text-green { 
             color: #00ff66; 
             text-shadow: 0 0 8px rgba(0, 255, 102, 0.7), 0 0 20px rgba(0, 255, 102, 0.4);
         }
         .neon-border-green {
             border-color: #00ff66;
-            box-shadow: 0 0 10px rgba(0, 255, 102, 0.2), inset 0 0 5px rgba(0, 255, 102, 0.1);
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.25), inset 0 0 6px rgba(0, 255, 102, 0.1);
         }
         .neon-button {
             background-color: #00ff66;
@@ -44,27 +41,35 @@
             background-color: #1aff80;
             box-shadow: 0 0 25px rgba(0, 255, 102, 0.8), 0 0 40px rgba(0, 255, 102, 0.4);
         }
-
+        .secondary-button {
+            background: rgba(0, 255, 102, 0.1);
+            border: 1px solid #00ff66;
+            color: #00ff66;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .secondary-button:hover {
+            background: rgba(0, 255, 102, 0.25);
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+        }
         details > summary { list-style: none; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
-        
         .glass-panel {
-            background: rgba(8, 10, 14, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(8, 10, 14, 0.92);
+            backdrop-filter: blur(12px);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between p-4 relative">
 
-    <!-- Canvas Efek Matrix Bergerak -->
     <canvas id="matrix-canvas"></canvas>
 
     <main class="max-w-md mx-auto w-full my-auto space-y-4 relative z-10">
         
-        <!-- Header dengan Efek Neon -->
+        <!-- Header -->
         <div class="text-center space-y-1 mb-2">
-            <h1 class="neon-text-green tracking-widest text-lg font-bold animate-pulse">&gt; VEKTOR_ZERO // LAB EDUKASI</h1>
-            <p class="text-xs text-gray-400">[STATUS: OPEN_SOURCE // BELAJAR TANPA BATAS]</p>
+            <h1 class="neon-text-green tracking-widest text-lg font-bold animate-pulse">&gt; VEKTOR_ZERO // CYBER_SANDBOX</h1>
+            <p class="text-xs text-gray-400">[INTERACTIVE LAB: BELAJAR & PRAKTEK LANGSUNG]</p>
         </div>
 
         <div class="glass-panel neon-border-green rounded-xl p-4 shadow-2xl">
@@ -75,78 +80,99 @@
                     <div class="w-2.5 h-2.5 rounded-full bg-yellow-500 shadow-[0_0_6px_#eab308]"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_6px_#22c55e]"></div>
                 </div>
-                <span class="text-[10px] text-gray-400">root@vektor-zero:~#</span>
+                <span class="text-[10px] text-gray-400">root@vektor-zero:~# active_labs</span>
             </div>
 
             <div class="space-y-3 text-xs sm:text-sm">
                 <div class="text-gray-400">
-                    <span class="neon-text-green">root@vektor:~#</span> cat /manifesto.txt
+                    <span class="neon-text-green">root@vektor:~#</span> load --interactive-modules
                 </div>
                 <div class="p-3 bg-black/90 border border-gray-800 rounded-lg text-gray-200 leading-relaxed space-y-2">
-                    <p class="neon-text-green font-semibold">⚡ Berhenti jadi penonton. Mulai bangun sistem.</p>
-                    <p>Selamat datang di ruang belajar terbuka Vektor Zero. Di sini kita bedah tuntas logika koding, jaringan, dan keamanan sistem secara gamblang dan mudah dicerna.</p>
-                    <p class="text-gray-400 text-xs">Pilih modul materi di bawah untuk mulai menyerap ilmunya langsung dari HP atau laptopmu.</p>
+                    <p class="neon-text-green font-semibold">⚡ Jangan cuma dibaca. Coba langsung alatnya di bawah!</p>
+                    <p>Di ruang ini, kamu bisa langsung praktik uji enkripsi data, simulasi keamanan sandi, dan mengakses terminal eksternal untuk mulai ngoding.</p>
                 </div>
             </div>
 
-            <!-- Daftar Modul Pembelajaran -->
+            <!-- Daftar Modul & Praktik Langsung -->
             <div class="mt-4 pt-3 border-t border-gray-800 space-y-2">
-                <p class="text-[10px] text-gray-400 mb-2 uppercase tracking-wider">&gt;&gt; PILIH MODUL PEMBELAJARAN:</p>
+                <p class="text-[10px] text-gray-400 mb-2 uppercase tracking-wider">&gt;&gt; PILIH LABORATORIUM PRAKTIK:</p>
                 
-                <!-- Modul 1 -->
+                <!-- LAB 1: Live Text Encryptor & Decryptor -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
                     <summary class="p-3 text-emerald-400 text-xs flex justify-between items-center hover:bg-emerald-950/30 transition-colors">
-                        <span>Modul 01: Logika & Cara Kerja Program</span>
-                        <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-2">
-                        <p><span class="neon-text-green">[PELAJARAN]:</span> Komputer itu bodoh; dia cuma jalanin apa yang kita ketik (Literal). Koding pada dasarnya adalah seni memecah masalah besar jadi instruksi-instruksi kecil yang berurutan (Algoritma).</p>
-                        <p class="text-gray-400">Contoh sederhananya seperti resep masakan atau alur logika tombol lampu: Jika tombol ditekan (IF), maka nyalakan lampu (THEN).</p>
-                    </div>
-                </details>
-
-                <!-- Modul 2 -->
-                <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
-                    <summary class="p-3 text-cyan-400 text-xs flex justify-between items-center hover:bg-cyan-950/30 transition-colors">
-                        <span>Modul 02: Dasar Enkripsi & Keamanan Data</span>
+                        <span>[LAB 01] Enkripsi & Dekripsi Pesan Rahasia</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
-                        <p><span class="text-cyan-400">[PELAJARAN]:</span> Data mentah di internet rentan disadap. Makanya kita butuh enkripsi untuk mengacak pesan agar aman di jalur transmisi.</p>
+                        <p><span class="neon-text-green">Praktek:</span> Ketik pesan bebas, sistem akan otomatis mengubahnya menjadi sandi (Cipher) dan bisa dikembalikan lagi.</p>
                         
-                        <!-- Mini Tools Ril -->
-                        <div class="space-y-1 pt-1">
-                            <label class="text-[10px] text-gray-400">Uji Coba Enkripsi Teks:</label>
-                            <input type="text" id="userInputText" placeholder="Ketik pesan rahasia di sini..." oninput="encryptText()" class="w-full bg-black border border-gray-700 rounded p-2 text-xs text-emerald-400 focus:outline-none focus:border-[#00ff66]">
-                        </div>
                         <div class="space-y-1">
-                            <label class="text-[10px] text-gray-400">Hasil Sandi (Ciphertext):</label>
-                            <div id="resultOutput" class="w-full bg-black border border-gray-800 rounded p-2 text-[11px] text-yellow-400 break-all font-mono min-h-[30px]">
-                                (Ketik teks di atas...)
+                            <label class="text-[10px] text-gray-400">Masukkan Pesan Asli:</label>
+                            <input type="text" id="rawText" placeholder="Contoh: halo kawan..." oninput="runEncryption()" class="w-full bg-black border border-gray-700 rounded p-2 text-xs text-emerald-400 focus:outline-none focus:border-[#00ff66]">
+                        </div>
+                        
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-gray-400">Hasil Enkripsi (Base64):</label>
+                            <div id="encResult" class="w-full bg-black border border-gray-800 rounded p-2 text-[11px] text-yellow-400 break-all font-mono min-h-[28px]">(Menunggu input...)</div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-gray-400">Hasil Dekripsi (Kembali Normal):</label>
+                            <div id="decResult" class="w-full bg-black border border-gray-800 rounded p-2 text-[11px] text-cyan-400 break-all font-mono min-h-[28px]">(Menunggu hasil...)</div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- LAB 2: Password Strength & Crack Simulator -->
+                <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
+                    <summary class="p-3 text-cyan-400 text-xs flex justify-between items-center hover:bg-cyan-950/30 transition-colors">
+                        <span>[LAB 02] Uji Kekuatan Password (Simulator)</span>
+                        <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
+                        <p><span class="text-cyan-400">Praktek:</span> Ketik password yang biasa kamu pakai, dan lihat seberapa cepat sistem mendeteksi tingkat keamanannya.</p>
+                        
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-gray-400">Uji Coba Password:</label>
+                            <input type="password" id="passInput" placeholder="Ketik password di sini..." oninput="checkPassword()" class="w-full bg-black border border-gray-700 rounded p-2 text-xs text-cyan-400 focus:outline-none focus:border-cyan-400">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-gray-400">Status Keamanan:</label>
+                            <div id="passStatus" class="w-full bg-black border border-gray-800 rounded p-2 text-xs text-gray-400">
+                                Status: Belum diuji
                             </div>
                         </div>
                     </div>
                 </details>
 
-                <!-- Modul 3 -->
+                <!-- LAB 3: Quick Logic & Code Snippet Preview -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
                     <summary class="p-3 text-purple-400 text-xs flex justify-between items-center hover:bg-purple-950/30 transition-colors">
-                        <span>Modul 03: Otomasi Sistem via Perangkat Mobile</span>
+                        <span>[LAB 03] Bedah Logika Script Bot Sederhana</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-2">
-                        <p><span class="text-purple-400">[PELAJARAN]:</span> Jangan biarkan HP-mu cuma buat scrolling media sosial atau buang waktu. Dengan emulator terminal seperti Termux atau editor kode mobile seperti Acode, HP Android-mu bisa berubah jadi mesin pengembang mini untuk membuat bot otomatis atau skrip pengaman jaringan.</p>
+                        <p><span class="text-purple-400">Pelajaran:</span> Ini adalah kerangka dasar logika otomatisasi yang biasa dipakai untuk merespon perintah secara instan.</p>
+                        <pre class="bg-black p-2 rounded border border-gray-800 text-[10px] text-emerald-300 overflow-x-auto"><code>// Logika Respon Otomatis
+function handleMessage(msg) {
+  if (msg === "!ping") {
+    return "Pong! Sistem Aktif.";
+  }
+  return "Perintah tidak dikenal.";
+}</code></pre>
+                        <p class="text-gray-400 text-[11px]">Mau belajar cara mengembangkan kode ini jadi bot WhatsApp fungsional pakai HP? Semua dibahas tuntas di grup.</p>
                     </div>
                 </details>
 
-                <!-- Modul 4 -->
+                <!-- LAB 4: Masuk Komunitas -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group">
                     <summary class="p-3 text-yellow-400 text-xs flex justify-between items-center hover:bg-yellow-950/30 transition-colors">
-                        <span>Modul 04: Kolaborasi & Proyek Bersama</span>
+                        <span>[KOMUNITAS] Ruang Diskusi & Proyek Tim</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-2">
-                        <p><span class="text-yellow-400">[AKSI]:</span> Teori tanpa praktik itu kosong. Di grup komunitas, kita rutin bedah kode, diskusi bug, dan bangun proyek aplikasi nyata secara bersama-sama dari nol.</p>
+                        <p><span class="text-yellow-400">Aksi:</span> Praktik mandiri itu seru, tapi berkolaborasi jauh lebih cepat bikin jago. Masuk ke grup buat sharing error, nanya script, atau bangun proyek bareng.</p>
                         <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="inline-block mt-2 text-emerald-400 underline font-bold">&gt;&gt; JOIN GRUP DISKUSI WHATSAPP</a>
                     </div>
                 </details>
@@ -154,8 +180,15 @@
             </div>
         </div>
 
-        <!-- Tombol Utama WhatsApp dengan Efek Neon Menyala -->
+        <!-- Tombol Tautan Tambahan: Buka Terminal Online Eksternal -->
         <div class="space-y-2 pt-1">
+            <a href="https://replit.com/" target="_blank" class="flex items-center justify-center space-x-2 w-full secondary-button py-2.5 px-4 rounded-xl text-xs tracking-wider">
+                <span>💻 BUKA TERMINAL CLOUD (SANDBOX EKSTERNAL)</span>
+            </a>
+        </div>
+
+        <!-- Tombol Utama WhatsApp -->
+        <div class="space-y-2">
             <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="flex items-center justify-center space-x-2 w-full neon-button py-3 px-4 rounded-xl text-xs tracking-wider">
                 <span>⚡ MASUK KE LINGKARAN DISKUSI (WHATSAPP)</span>
             </a>
@@ -167,9 +200,8 @@
         // VEKTOR ZERO SYSTEM — ALL RIGHTS RESERVED
     </footer>
 
-    <!-- Script Matrix Rain & Enkripsi -->
+    <!-- Skrip Matrix & Interactive Labs -->
     <script>
-        // Efek Hujan Matrix Bergerak
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -207,21 +239,53 @@
         }
         setInterval(drawMatrix, 50);
 
-        // Fungsi Enkripsi Modul 2
-        function encryptText() {
-            const input = document.getElementById('userInputText').value;
-            const output = document.getElementById('resultOutput');
-            
-            if (!input) {
-                output.innerText = "(Ketik teks di atas...)";
+        function runEncryption() {
+            const raw = document.getElementById('rawText').value;
+            const encOut = document.getElementById('encResult');
+            const decOut = document.getElementById('decResult');
+
+            if (!raw) {
+                encOut.innerText = "(Menunggu input...)";
+                decOut.innerText = "(Menunggu hasil...)";
                 return;
             }
 
             try {
-                const encoded = btoa(encodeURIComponent(input));
-                output.innerText = "BASE64::" + encoded;
+                const encoded = btoa(encodeURIComponent(raw));
+                encOut.innerText = encoded;
+                const decoded = decodeURIComponent(atob(encoded));
+                decOut.innerText = decoded;
             } catch (e) {
-                output.innerText = "ERROR: Karakter tidak valid.";
+                encOut.innerText = "ERROR";
+                decOut.innerText = "GAGAL DEKODE";
+            }
+        }
+
+        function checkPassword() {
+            const pass = document.getElementById('passInput').value;
+            const status = document.getElementById('passStatus');
+
+            if (!pass) {
+                status.innerText = "Status: Belum diuji";
+                status.style.color = "#9ca3af";
+                return;
+            }
+
+            let score = 0;
+            if (pass.length >= 8) score++;
+            if (/[A-Z]/.test(pass)) score++;
+            if (/[0-9]/.test(pass)) score++;
+            if (/[^A-Za-z0-9]/.test(pass)) score++;
+
+            if (score <= 1) {
+                status.innerText = "⚠️ Lemah! Sangat gampang ditebak/dibobol hacker.";
+                status.style.color = "#ef4444";
+            } else if (score === 2 || score === 3) {
+                status.innerText = "⚡ Sedang. Lumayan, tapi tambahkan simbol atau angka.";
+                status.style.color = "#eab308";
+            } else {
+                status.innerText = "🛡️ Kuat! Enkripsi sandi sangat aman.";
+                status.style.color = "#00ff66";
             }
         }
     </script>
