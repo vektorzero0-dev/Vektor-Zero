@@ -88,8 +88,8 @@
                     <span class="neon-text-green">root@vektor:~#</span> start --interactive-code-runner
                 </div>
                 <div class="p-3 bg-black/90 border border-gray-800 rounded-lg text-gray-200 leading-relaxed space-y-2">
-                    <p class="neon-text-green font-semibold">⚡ Tulis kodingan web pertamamu di sini.</p>
-                    <p>Ubah teks di bawah, klik tombol <b>RUN CODE</b>, dan saksikan langsung hasil karya web statis buatanmu tampil seketika!</p>
+                    <p class="neon-text-green font-semibold">⚡ Selamat datang di Ruang Simulasi Koding.</p>
+                    <p>Di bawah ini adalah <b>terminal kode dan contoh dalam pembuatan sebuah aplikasi web statis</b>. Pelajari strukturnya dan tekan tombol RUN untuk melihat hasilnya!</p>
                 </div>
             </div>
 
@@ -100,32 +100,35 @@
                 <!-- LAB 01: Live HTML/CSS Code Playground -->
                 <details class="bg-black/95 border border-gray-800 rounded-lg overflow-hidden group" open>
                     <summary class="p-3 text-emerald-400 text-xs flex justify-between items-center hover:bg-emerald-950/30 transition-colors">
-                        <span>[LAB 01] Live Web Playground & HTML Runner</span>
+                        <span>[LAB 01] Terminal & Contoh Pembuatan Aplikasi Web</span>
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
-                        <p><span class="neon-text-green">Praktik:</span> Edit kode HTML/CSS di bawah sesukamu, lalu klik <b>RUN CODE</b>.</p>
+                        <p><span class="neon-text-green">Instruksi:</span> Ini adalah terminal kode contoh pembuatan aplikasi. Pelajari kodenya, lalu <b>tekan tombol RUN</b> di bawah untuk melihat pratinjau dari kode tersebut.</p>
                         
-                        <!-- Kotak Editor KODE -->
+                        <!-- Kotak Terminal Editor KODE (Desain Elegan Tanpa Tombol Hapus) -->
                         <div class="space-y-1">
-                            <label class="text-[10px] text-gray-400">Editor Koding (HTML / CSS):</label>
-                            <textarea id="codeEditor" rows="6" class="w-full bg-black border border-gray-700 rounded p-2 text-[11px] text-emerald-400 font-mono focus:outline-none focus:border-[#00ff66] resize-none">&lt;div style="background: #111; padding: 15px; border: 2px solid #00ff66; border-radius: 8px; text-align: center;"&gt;
-    &lt;h2 style="color: #00ff66; margin: 0 0 10px 0;"&gt;Halo, Dunia!&lt;/h2&gt;
-    &lt;p style="color: #fff; font-size: 12px;"&gt;Ini web statis pertama buatan saya di Vektor Zero Lab.&lt;/p&gt;
-    &lt;button style="background: #00ff66; color: #000; border: none; padding: 6px 12px; font-weight: bold; border-radius: 4px; cursor: pointer;"&gt;Tombol Keren&lt;/button&gt;
+                            <div class="flex items-center justify-between bg-zinc-900 px-3 py-1.5 rounded-t border-x border-t border-zinc-700 text-[10px] text-gray-400">
+                                <span>📁 source_code.html</span>
+                                <span class="text-emerald-400">HTML5 / CSS3</span>
+                            </div>
+                            <textarea id="codeEditor" rows="7" class="w-full bg-zinc-950 border border-zinc-700 rounded-b p-2.5 text-[11px] text-emerald-400 font-mono focus:outline-none focus:border-[#00ff66] resize-none">&lt;div style="background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 16px; border: 1px solid #00ff66; border-radius: 10px; text-align: center; box-shadow: 0 0 15px rgba(0,255,102,0.2);"&gt;
+    &lt;h3 style="color: #00ff66; margin: 0 0 8px 0; font-family: monospace;"&gt;[APLIKASI PERTAMA]&lt;/h3&gt;
+    &lt;p style="color: #d1d5db; font-size: 11px; margin-bottom: 12px;"&gt;Contoh kerangka tampilan aplikasi web modern yang dibangun dari baris kode terminal.&lt;/p&gt;
+    &lt;button style="background: #00ff66; color: #000; border: none; padding: 6px 14px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 11px;"&gt;AKSI SISTEM&lt;/button&gt;
 &lt;/div&gt;</textarea>
                         </div>
 
                         <!-- Tombol RUN -->
-                        <button onclick="runCode()" class="w-full bg-emerald-900 border border-emerald-500 text-emerald-300 py-2 rounded text-xs font-bold hover:bg-emerald-800 transition-colors">
-                            ▶ RUN CODE & LIHAT HASIL KARYA
+                        <button onclick="runCode()" class="w-full bg-emerald-900 border border-emerald-500 text-emerald-300 py-2.5 rounded text-xs font-bold hover:bg-emerald-800 transition-colors shadow-[0_0_10px_rgba(0,255,102,0.3)]">
+                            ▶ TEKAN TOMBOL RUN UNTUK MELIHAT PRATINJAU
                         </button>
 
-                        <!-- Kotak Hasil Preview (Kosong di awal, baru muncul pas tombol RUN diklik) -->
+                        <!-- Kotak Hasil Preview -->
                         <div class="space-y-1 pt-1">
-                            <label class="text-[10px] text-gray-400">Hasil Karya (Live Preview):</label>
-                            <div id="previewContainer" class="w-full bg-white border border-gray-800 rounded p-3 min-h-[90px] flex items-center justify-center overflow-hidden">
-                                <span class="text-gray-400 text-[11px] font-sans">[Klik RUN CODE untuk menampilkan hasil]</span>
+                            <label class="text-[10px] text-gray-400">Pratinjau Hasil Aplikasi (Live Preview):</label>
+                            <div id="previewContainer" class="w-full bg-zinc-950 border border-zinc-800 rounded p-3 min-h-[90px] flex items-center justify-center overflow-hidden">
+                                <span class="text-gray-500 text-[11px] font-sans italic">[Tekan tombol RUN di atas untuk memuat pratinjau kode]</span>
                             </div>
                         </div>
                     </div>
@@ -250,7 +253,7 @@
             const container = document.getElementById('previewContainer');
             
             if (!code.trim()) {
-                container.innerHTML = "<span class='text-red-500 text-[11px] font-sans'>[Error: Editor kosong!]</span>";
+                container.innerHTML = "<span class='text-red-500 text-[11px] font-sans'>[Error: Kode editor kosong!]</span>";
                 return;
             }
 
