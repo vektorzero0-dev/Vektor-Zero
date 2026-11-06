@@ -89,7 +89,7 @@
                 </div>
                 <div class="p-3 bg-black/90 border border-gray-800 rounded-lg text-gray-200 leading-relaxed space-y-2">
                     <p class="neon-text-green font-semibold">⚡ Selamat datang di Ruang Simulasi Koding.</p>
-                    <p>Di bawah ini adalah <b>terminal kode dan contoh dalam pembuatan sebuah aplikasi web statis</b>. Pelajari strukturnya dan tekan tombol RUN untuk melihat hasilnya!</p>
+                    <p>Di bawah ini adalah <b>terminal kode dan contoh dalam pembuatan aplikasi web</b>. Pelajari strukturnya, lalu tekan tombol RUN untuk melihat pratinjau bentuk aplikasinya!</p>
                 </div>
             </div>
 
@@ -104,31 +104,37 @@
                         <span class="text-gray-400 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                     </summary>
                     <div class="p-3 border-t border-gray-800/80 bg-gray-950/95 text-gray-300 text-xs leading-relaxed space-y-3">
-                        <p><span class="neon-text-green">Instruksi:</span> Ini adalah terminal kode contoh pembuatan aplikasi. Pelajari kodenya, lalu <b>tekan tombol RUN</b> di bawah untuk melihat pratinjau dari kode tersebut.</p>
+                        <p><span class="neon-text-green">Instruksi:</span> Ini adalah terminal kode contoh pembuatan aplikasi berbasis dashboard. Pelajari kodenya, lalu <b>tekan tombol RUN</b> di bawah untuk melihat pratinjau wujud aplikasinya.</p>
                         
-                        <!-- Kotak Terminal Editor KODE (Desain Elegan Tanpa Tombol Hapus) -->
+                        <!-- Kotak Terminal Editor KODE (Contoh Kode Aplikasi Dashboard Nyata) -->
                         <div class="space-y-1">
                             <div class="flex items-center justify-between bg-zinc-900 px-3 py-1.5 rounded-t border-x border-t border-zinc-700 text-[10px] text-gray-400">
-                                <span>📁 source_code.html</span>
-                                <span class="text-emerald-400">HTML5 / CSS3</span>
+                                <span>📁 cyber_dashboard.html</span>
+                                <span class="text-emerald-400">App UI / Tailwind</span>
                             </div>
-                            <textarea id="codeEditor" rows="7" class="w-full bg-zinc-950 border border-zinc-700 rounded-b p-2.5 text-[11px] text-emerald-400 font-mono focus:outline-none focus:border-[#00ff66] resize-none">&lt;div style="background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 16px; border: 1px solid #00ff66; border-radius: 10px; text-align: center; box-shadow: 0 0 15px rgba(0,255,102,0.2);"&gt;
-    &lt;h3 style="color: #00ff66; margin: 0 0 8px 0; font-family: monospace;"&gt;[APLIKASI PERTAMA]&lt;/h3&gt;
-    &lt;p style="color: #d1d5db; font-size: 11px; margin-bottom: 12px;"&gt;Contoh kerangka tampilan aplikasi web modern yang dibangun dari baris kode terminal.&lt;/p&gt;
-    &lt;button style="background: #00ff66; color: #000; border: none; padding: 6px 14px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 11px;"&gt;AKSI SISTEM&lt;/button&gt;
+                            <textarea id="codeEditor" rows="8" class="w-full bg-zinc-950 border border-zinc-700 rounded-b p-2.5 text-[11px] text-emerald-400 font-mono focus:outline-none focus:border-[#00ff66] resize-none">&lt;div style="background: #0b0c10; border: 1px solid #00ff66; border-radius: 8px; padding: 14px; font-family: monospace; color: #fff;"&gt;
+    &lt;div style="display: flex; justify-between; align-items: center; border-bottom: 1px solid #222; padding-bottom: 8px; margin-bottom: 10px;"&gt;
+        &lt;span style="color: #00ff66; font-weight: bold; font-size: 11px;"&gt;⚡ SYSTEM_DASHBOARD v1.0&lt;/span&gt;
+        &lt;span style="background: rgba(0,255,102,0.2); color: #00ff66; padding: 2px 6px; font-size: 9px; border-radius: 4px;"&gt;ONLINE&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div style="font-size: 11px; color: #a0aec0; margin-bottom: 10px;"&gt;
+        &lt;p style="margin: 3px 0;"&gt;&gt; Host: Vektor-Zero-Node&lt;/p&gt;
+        &lt;p style="margin: 3px 0;"&gt;&gt; Enkripsi: AES-256 (Active)&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button onclick="alert('Aplikasi berjalan dengan sukses, Zeeo!')" style="width: 100%; background: #00ff66; color: #000; border: none; padding: 6px; font-weight: bold; font-size: 11px; border-radius: 4px; cursor: pointer;"&gt;JALANKAN PERINTAH&lt;/button&gt;
 &lt;/div&gt;</textarea>
                         </div>
 
                         <!-- Tombol RUN -->
                         <button onclick="runCode()" class="w-full bg-emerald-900 border border-emerald-500 text-emerald-300 py-2.5 rounded text-xs font-bold hover:bg-emerald-800 transition-colors shadow-[0_0_10px_rgba(0,255,102,0.3)]">
-                            ▶ TEKAN TOMBOL RUN UNTUK MELIHAT PRATINJAU
+                            ▶ TEKAN TOMBOL RUN UNTUK MELIHAT PRATINJAU APLIKASI
                         </button>
 
                         <!-- Kotak Hasil Preview -->
                         <div class="space-y-1 pt-1">
-                            <label class="text-[10px] text-gray-400">Pratinjau Hasil Aplikasi (Live Preview):</label>
-                            <div id="previewContainer" class="w-full bg-zinc-950 border border-zinc-800 rounded p-3 min-h-[90px] flex items-center justify-center overflow-hidden">
-                                <span class="text-gray-500 text-[11px] font-sans italic">[Tekan tombol RUN di atas untuk memuat pratinjau kode]</span>
+                            <label class="text-[10px] text-gray-400">Pratinjau Wujud Aplikasi (Live Preview):</label>
+                            <div id="previewContainer" class="w-full bg-black border border-zinc-800 rounded p-3 min-h-[110px] flex items-center justify-center overflow-hidden">
+                                <span class="text-gray-500 text-[11px] font-sans italic">[Tekan tombol RUN di atas untuk meload aplikasi]</span>
                             </div>
                         </div>
                     </div>
@@ -247,7 +253,7 @@
         }
         setInterval(drawMatrix, 50);
 
-        // Lab 01: Live Code Runner (Hanya merender hasil ketika tombol RUN diklik)
+        // Lab 01: Live Code Runner (Merender wujud aplikasi dashboard)
         function runCode() {
             const code = document.getElementById('codeEditor').value;
             const container = document.getElementById('previewContainer');
@@ -257,7 +263,6 @@
                 return;
             }
 
-            // Render kode HTML ke dalam kotak preview
             container.innerHTML = code;
         }
 
