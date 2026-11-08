@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech & Cyber Lab | Belajar Dari Nol</title>
+    <title>ZEEO.LAB | Interactive Tech & Cyber Lab</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN untuk styling cepat & profesional -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         body {
@@ -14,19 +14,37 @@
             background-color: #0b0f19;
             color: #f3f4f6;
             overflow-x: hidden;
+            position: relative;
+        }
+        /* Canvas Matrix Rain Background */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0.22;
+            pointer-events: none;
         }
         .code-font {
             font-family: 'Fira Code', monospace;
         }
         .glow-effect {
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.12);
+        }
+        .glow-button {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
 
+    <!-- Latar Belakang Matrix Rain Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
     <!-- Header / Navbar -->
-    <header class="border-b border-slate-800 backdrop-blur-md bg-[#0b0f19]/80 sticky top-0 z-50">
+    <header class="border-b border-slate-800/80 backdrop-blur-md bg-[#0b0f19]/80 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <span class="text-emerald-400 code-font font-bold text-lg">&gt;_</span>
@@ -34,8 +52,8 @@
             </div>
             <nav class="hidden md:flex space-x-8 text-sm text-slate-400">
                 <a href="#tentang" class="hover:text-emerald-400 transition">Tentang</a>
+                <a href="#playground" class="hover:text-emerald-400 transition">Interactive Lab</a>
                 <a href="#materi" class="hover:text-emerald-400 transition">Kurikulum</a>
-                <a href="#gabung" class="hover:text-emerald-400 transition">Komunitas</a>
             </nav>
             <div>
                 <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition shadow-lg shadow-emerald-500/20">
@@ -46,8 +64,8 @@
     </header>
 
     <!-- Hero Section -->
-    <main class="flex-grow">
-        <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+    <main class="flex-grow relative z-10">
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
             <div class="space-y-6 text-center md:text-left">
                 <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full text-emerald-400 text-xs code-font">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -57,20 +75,20 @@
                     Belajar Koding & <span class="text-emerald-400">Cyber Security</span> Dari Nol.
                 </h1>
                 <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
-                    Ruang eksklusif untuk membangun fondasi teknologi, memahami logika pemrograman, dan mengamankan aset digital dengan bahasa yang membumi dan mudah dipahami pemula.
+                    Ruang eksklusif untuk membangun fondasi teknologi, memahami logika pemrograman, dan mengamankan aset digital dengan bahasa yang membumi dan interaktif.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
-                    <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-center transition shadow-lg shadow-emerald-500/20">
+                    <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-center transition glow-button">
                         Masuk Grup WhatsApp
                     </a>
-                    <a href="#materi" class="border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-white font-medium px-6 py-3.5 rounded-xl text-center transition">
-                        Lihat Alur Belajar
+                    <a href="#playground" class="border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-white font-medium px-6 py-3.5 rounded-xl text-center transition">
+                        Coba Interactive Lab
                     </a>
                 </div>
             </div>
 
-            <!-- Terminal Mockup Box -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 glow-effect">
+            <!-- Terminal Hero Mockup -->
+            <div class="bg-slate-900/90 backdrop-blur border border-slate-800 rounded-2xl p-4 sm:p-5 glow-effect">
                 <div class="flex items-center justify-between pb-3 border-b border-slate-800">
                     <div class="flex space-x-2">
                         <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -80,35 +98,93 @@
                     <span class="text-xs text-slate-500 code-font">bash - zeo@terminal</span>
                 </div>
                 <div class="pt-4 text-xs sm:text-sm code-font space-y-2 text-slate-300 overflow-x-auto">
-                    <p class="text-slate-500"># Memulai perjalanan belajar dari titik nol</p>
-                    <p><span class="text-emerald-400">root@zeeo:~#</span> init_community --status=open</p>
-                    <p class="text-emerald-300">&gt; Memuat modul dasar koding...</p>
-                    <p class="text-emerald-300">&gt; Memuat protokol keamanan siber...</p>
-                    <p class="text-white font-semibold">&gt; Sistem siap. Silakan bergabung ke ruang diskusi.</p>
+                    <p class="text-slate-500"># Inisialisasi modul investigasi & kode</p>
+                    <p><span class="text-emerald-400">root@zeeo:~#</span> load_workspace --sherlock-osint</p>
+                    <p class="text-emerald-300">&gt; Memuat modul pelacak OSINT & terminal...</p>
+                    <p class="text-white font-semibold">&gt; Sistem siap. Pilih menu uji coba di bawah.</p>
                     <p class="animate-pulse text-emerald-400">_</p>
                 </div>
             </div>
         </section>
 
-        <!-- Section Fitur / Alur -->
-        <section id="materi" class="border-t border-slate-800/80 bg-slate-950/50 py-16 md:py-20">
+        <!-- Interactive Code Playground & App Showcase Section -->
+        <section id="playground" class="border-t border-slate-800/80 bg-slate-950/70 backdrop-blur py-16 md:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-8">
+                
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <div class="inline-block text-emerald-400 code-font text-xs uppercase tracking-widest">// Cyber Lab & Showcase</div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Eksplorasi Alat & Contoh Kode Profesional</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Pilih menu di bawah untuk melihat baris kode pembangun aplikasinya, lalu tekan tombol RUN untuk menguji atau melihat pratinjaunya secara langsung.</p>
+                </div>
+
+                <!-- Menu Tab Pilihan Contoh Aplikasi & Sherlock -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3" id="appMenu">
+                    <button onclick="loadTemplate('sherlock')" id="btn-sherlock" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition border border-emerald-500 bg-emerald-500/10 text-emerald-400">
+                        🕵️‍♂️ 01. Sherlock OSINT Recon
+                    </button>
+                    <button onclick="loadTemplate('dashboard')" id="btn-dashboard" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition border border-slate-800 bg-slate-900 text-slate-400 hover:text-white hover:border-slate-700">
+                        ⚡ 02. Cyber System Dashboard
+                    </button>
+                    <button onclick="loadTemplate('auth')" id="btn-auth" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition border border-slate-800 bg-slate-900 text-slate-400 hover:text-white hover:border-slate-700">
+                        🛡️ 03. Secure Login Panel
+                    </button>
+                    <button onclick="loadTemplate('monitor')" id="btn-monitor" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition border border-slate-800 bg-slate-900 text-slate-400 hover:text-white hover:border-slate-700">
+                        📊 04. Live Traffic Monitor
+                    </button>
+                </div>
+
+                <!-- Terminal IDE & Preview Wrapper -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-slate-900/90 backdrop-blur border border-slate-800 rounded-2xl p-4 sm:p-6 glow-effect">
+                    
+                    <!-- Kiri: Kotak Kode (Terminal Editor) -->
+                    <div class="space-y-3 flex flex-col">
+                        <div class="flex items-center justify-between text-xs text-slate-400 code-font pb-2 border-b border-slate-800">
+                            <span id="fileName" class="text-emerald-400 font-bold">sherlock_osint.py</span>
+                            <span id="fileLang">Python / OSINT Script</span>
+                        </div>
+                        <div class="flex-grow">
+                            <textarea id="codeEditor" readonly rows="12" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs sm:text-sm text-emerald-300 code-font focus:outline-none resize-none leading-relaxed"></textarea>
+                        </div>
+                        <button onclick="runCode()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-xl transition text-sm shadow-lg shadow-emerald-500/20 flex items-center justify-center space-x-2">
+                            <span>▶ RUN & LIHAT PRATINJAU APLIKASI</span>
+                        </button>
+                    </div>
+
+                    <!-- Kanan: Kotak Pratinjau (Live App Preview) -->
+                    <div class="space-y-3 flex flex-col">
+                        <div class="flex items-center justify-between text-xs text-slate-400 code-font pb-2 border-b border-slate-800">
+                            <span class="text-slate-300 font-bold">Pratinjau Aplikasi (Live View)</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        </div>
+                        <div id="previewContainer" class="flex-grow bg-slate-950 border border-slate-800 rounded-xl p-4 flex items-center justify-center min-h-[280px] overflow-auto">
+                            <!-- Hasil render aplikasi masuk ke sini -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section Kurikulum -->
+        <section id="materi" class="border-t border-slate-800/80 bg-slate-950/50 backdrop-blur py-16 md:py-24">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
                 <div class="text-center max-w-2xl mx-auto space-y-4 mb-12 md:mb-16">
                     <h2 class="text-2xl sm:text-3xl font-bold text-white">Apa yang Akan Kita Bedah?</h2>
                     <p class="text-slate-400 text-sm sm:text-base">Kurikulum dirancang bertahap agar ramah bagi siapa saja yang baru pertama kali menyentuh dunia IT.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                    <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4">
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-4">
                         <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold code-font">01</div>
                         <h3 class="text-lg sm:text-xl font-semibold text-white">Logika & Dasar Koding</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">Mengenal struktur baris perintah, logika pemograman dasar, dan cara mengoperasikan terminal dengan mudah.</p>
                     </div>
-                    <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4">
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-4">
                         <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold code-font">02</div>
                         <h3 class="text-lg sm:text-xl font-semibold text-white">Keamanan Siber Pemula</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">Memahami celah keamanan digital di sekitar kita, cara kerja perlindungan data, dan antisipasi peretasan akun.</p>
                     </div>
-                    <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4">
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-4">
                         <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold code-font">03</div>
                         <h3 class="text-lg sm:text-xl font-semibold text-white">Diskusi & Akselerasi</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">Sesi berbagi pengalaman, bedah kasus ringan, dan persiapan menuju program pelatihan intensif lanjutan.</p>
@@ -118,11 +194,11 @@
         </section>
 
         <!-- Call to Action Section -->
-        <section id="gabung" class="py-16 md:py-20 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-12 md:p-16 space-y-6 glow-effect">
+        <section id="gabung" class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <div class="bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur border border-slate-800 rounded-3xl p-8 sm:p-12 md:p-16 space-y-6 glow-effect">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Siap Mulai Belajar Dari Nol?</h2>
                 <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-                    Bergabunglah sekarang di grup WhatsApp komunitas untuk mendapatkan materi pertama dan diskusi langsung.
+                    Bergabunglah sekarang di grup WhatsApp komunitas untuk mendapatkan materi pertama dan diskusi langsung bersama kawan-kawan.
                 </p>
                 <div class="pt-2">
                     <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-8 py-4 rounded-xl transition shadow-xl shadow-emerald-500/20 text-base sm:text-lg">
@@ -134,9 +210,199 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500 px-4">
+    <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500 px-4 relative z-10 bg-[#0b0f19]/80 backdrop-blur">
         <p>&copy; 2026 ZEEO. All rights reserved. Built with precision and dark-mode aesthetics.</p>
     </footer>
 
+    <!-- Script Interaktif (Matrix Rain + App Showcase) -->
+    <script>
+        // Efek Matrix Rain Bergerak di Latar Belakang
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const letters = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ010101ZEEOVEKTOR';
+        const fontSize = 14;
+        let columns = Math.floor(canvas.width / fontSize);
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(11, 15, 25, 0.12)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff66';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 50);
+
+        // Kumpulan Contoh Kode Aplikasi & Sherlock
+        const templates = {
+            sherlock: {
+                filename: "sherlock_osint.py",
+                lang: "Python / OSINT Script",
+                code: `# OSINT Username Investigation Tool (Sherlock Engine)
+import requests
+import sys
+
+def scan_username(target):
+    print(f"[*] Melacak target: {target}")
+    platforms = {
+        "GitHub": f"https://github.com/{target}",
+        "Instagram": f"https://instagram.com/{target}",
+        "TikTok": f"https://tiktok.com/@{target}",
+        "Telegram": f"https://t.me/{target}"
+    }
+    for site, url in platforms.items():
+        print(f"[+] Ditemukan di {site}: {url}")
+
+if __name__ == "__main__":
+    scan_username("vektorzero")`,
+                renderType: "sherlock"
+            },
+            dashboard: {
+                filename: "cyber_dashboard.html",
+                lang: "HTML / Tailwind CSS",
+                code: `<div style="width: 100%; background: #07090f; border: 1px solid #10b981; border-radius: 12px; padding: 16px; font-family: monospace; color: #fff;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 10px; margin-bottom: 12px;">
+        <span style="color: #34d399; font-weight: bold; font-size: 12px;">⚡ NODE_MONITOR // V1.0</span>
+        <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 3px 8px; font-size: 10px; border-radius: 6px; border: 1px solid rgba(16,185,129,0.3);">SECURE</span>
+    </div>
+    <div style="font-size: 11px; color: #94a3b8; line-height: 1.6; margin-bottom: 14px;">
+        <div>> Status Jaringan: <span style="color: #34d399;">Terhubung (Encrypted)</span></div>
+        <div>> Ping Server: 14ms (Optimal)</div>
+        <div>> Firewall: Aktif & Mencegah Anomali</div>
+    </div>
+    <button onclick="alert('Perintah sistem berhasil dieksekusi!')" style="width: 100%; background: #10b981; color: #0b0f19; border: none; padding: 8px; font-weight: bold; font-size: 11px; border-radius: 8px; cursor: pointer;">
+        JALANKAN DIAGNOSTIK
+    </button>
+</div>`,
+                renderType: "html"
+            },
+            auth: {
+                filename: "secure_login.html",
+                lang: "HTML / Tailwind CSS",
+                code: `<div style="width: 100%; background: #07090f; border: 1px solid #3b82f6; border-radius: 12px; padding: 16px; font-family: monospace; color: #fff;">
+    <div style="text-align: center; margin-bottom: 14px;">
+        <h4 style="color: #60a5fa; margin: 0 0 4px 0; font-size: 13px;">🔒 AUTHENTICATION GATEWAY</h4>
+        <p style="color: #64748b; font-size: 10px; margin: 0;">Masukkan kunci akses untuk otorisasi terminal</p>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <input type="text" placeholder="Masukkan Access Token..." style="width: 100%; background: #0f172a; border: 1px solid #334155; padding: 8px; font-size: 11px; color: #38bdf8; border-radius: 6px; outline: none; box-sizing: border-box;" />
+    </div>
+    <button onclick="alert('Otorisasi Diterima! Selamat datang di sistem.')" style="width: 100%; background: #3b82f6; color: #fff; border: none; padding: 8px; font-weight: bold; font-size: 11px; border-radius: 8px; cursor: pointer;">
+        VERIFIKASI AKSES
+    </button>
+</div>`,
+                renderType: "html"
+            },
+            monitor: {
+                filename: "traffic_metrics.html",
+                lang: "HTML / Tailwind CSS",
+                code: `<div style="width: 100%; background: #07090f; border: 1px solid #a855f7; border-radius: 12px; padding: 16px; font-family: monospace; color: #fff;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="color: #c084fc; font-weight: bold; font-size: 12px;">📊 LIVE TRAFFIC METER</span>
+        <span style="color: #a855f7; font-size: 10px;">[Real-time Stream]</span>
+    </div>
+    <div style="background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 10px; font-size: 11px; color: #cbd5e1; margin-bottom: 12px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span>Inbound Bandwidth:</span>
+            <span style="color: #34d399;">2.4 MB/s</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <span>Active Connections:</span>
+            <span style="color: #60a5fa;">1,042 Users</span>
+        </div>
+    </div>
+    <button onclick="alert('Data lalu lintas diperbarui!')" style="width: 100%; background: #a855f7; color: #fff; border: none; padding: 8px; font-weight: bold; font-size: 11px; border-radius: 8px; cursor: pointer;">
+        REFRESH STATISTIK
+    </button>
+</div>`,
+                renderType: "html"
+            }
+        };
+
+        let currentActiveKey = 'sherlock';
+
+        function loadTemplate(key) {
+            currentActiveKey = key;
+            const data = templates[key];
+            
+            document.getElementById('codeEditor').value = data.code;
+            document.getElementById('fileName').innerText = data.filename;
+            document.getElementById('fileLang').innerText = data.lang;
+
+            ['sherlock', 'dashboard', 'auth', 'monitor'].forEach(k => {
+                const btn = document.getElementById(`btn-${k}`);
+                if (k === key) {
+                    btn.className = "px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition border border-emerald-500 bg-emerald-500/10 text-emerald-400";
+                } else {
+                    btn.className = "px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition border border-slate-800 bg-slate-900 text-slate-400 hover:text-white hover:border-slate-700";
+                }
+            });
+
+            runCode();
+        }
+
+        function runCode() {
+            const container = document.getElementById('previewContainer');
+
+            if (currentActiveKey === 'sherlock') {
+                container.innerHTML = `
+                    <div style="width: 100%; background: #07090f; border: 1px solid #10b981; border-radius: 12px; padding: 14px; font-family: monospace; color: #fff;">
+                        <div style="color: #34d399; font-weight: bold; font-size: 12px; margin-bottom: 8px;">🕵️‍♂️ SHERLOCK WEB OSINT RECON</div>
+                        <p style="color: #94a3b8; font-size: 10px; margin-bottom: 10px;">Uji coba melacak jejak akun publik berdasarkan username:</p>
+                        <div style="display: flex; gap: 6px; margin-bottom: 10px;">
+                            <input type="text" id="osintTarget" value="vektorzero" style="flex: 1; background: #0f172a; border: 1px solid #334155; padding: 6px 8px; font-size: 11px; color: #34d399; border-radius: 6px; outline: none;" />
+                            <button onclick="simulateSherlock()" style="background: #10b981; color: #0b0f19; border: none; padding: 6px 12px; font-weight: bold; font-size: 10px; border-radius: 6px; cursor: pointer;">SCAN</button>
+                        </div>
+                        <div id="osintResult" style="background: #000; border: 1px solid #1e293b; border-radius: 6px; padding: 8px; font-size: 10px; color: #fbbf24; height: 90px; overflow-y: auto;">
+                            > [SYSTEM] Siap melakukan pemindaian OSINT...
+                        </div>
+                    </div>
+                `;
+            } else {
+                const code = document.getElementById('codeEditor').value;
+                container.innerHTML = code;
+            }
+        }
+
+        async function simulateSherlock() {
+            const target = document.getElementById('osintTarget').value.trim() || "target";
+            const resBox = document.getElementById('osintResult');
+            resBox.innerHTML = `> [+] Memulai investigasi akun: ${target}...\n`;
+
+            const sites = ["GitHub", "Instagram", "TikTok", "Telegram", "Twitter"];
+            for (let site of sites) {
+                await new Promise(r => setTimeout(r, 250));
+                resBox.innerHTML += `> [+] <span style="color:#34d399">${site}:</span> Ditemukan jejak publik aktif!\n`;
+                resBox.scrollTop = resBox.scrollHeight;
+            }
+            resBox.innerHTML += `> [DONE] Investigasi selesai. Ingin tanpa batas? Jalankan di Termux!`;
+            resBox.scrollTop = resBox.scrollHeight;
+        }
+
+        window.onload = function() {
+            loadTemplate('sherlock');
+        };
+    </script>
 </body>
 </html>
