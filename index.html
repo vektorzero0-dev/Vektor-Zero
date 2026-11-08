@@ -68,7 +68,7 @@
             </div>
             <nav class="hidden md:flex space-x-8 text-xs text-gray-400 code-font">
                 <a href="#workspace" class="hover:text-[#00ff66] transition">~/code-sandbox</a>
-                <a href="#recon" class="hover:text-[#00ff66] transition">~/tiktok-direct-recon</a>
+                <a href="#recon" class="hover:text-[#00ff66] transition">~/recon-engine</a>
             </nav>
             <div>
                 <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="bg-gradient-to-r from-emerald-500 to-[#00ff66] hover:opacity-90 text-black font-extrabold px-5 py-2.5 rounded-xl text-xs transition shadow-[0_0_20px_rgba(0,255,102,0.3)] flex items-center gap-2 code-font">
@@ -89,10 +89,10 @@
                     <span>PROFESSIONAL SANDBOX ENVIRONMENT</span>
                 </div>
                 <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                    Platform Eksekusi Koding & <span class="neon-text">TikTok Recon</span> Nyata.
+                    Platform Eksekusi Koding & <span class="neon-text">OSINT Recon</span> Profesional.
                 </h1>
                 <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-light">
-                    Lingkungan uji coba struktur web profesional dan akses langsung penelusuran akun sosial media secara transparan.
+                    Uji struktur kode halaman web tingkat lanjut. Pratinjau eksklusif hanya akan dirender ketika perintah eksekusi (RUN) diberikan.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                     <a href="#workspace" class="bg-[#00ff66] hover:bg-[#1aff80] text-black font-extrabold px-7 py-3.5 rounded-2xl text-center transition text-xs code-font shadow-[0_0_25px_rgba(0,255,102,0.4)]">
@@ -113,8 +113,9 @@
                 </div>
                 <div class="text-xs code-font space-y-2 text-gray-300">
                     <p class="text-gray-500"># Menunggu interaksi pengguna...</p>
-                    <p><span class="neon-text">root@zeeo:~#</span> runtime --status active</p>
-                    <p class="text-emerald-400">&gt; [OK] Sandbox & Direct Recon terkonfigurasi.</p>
+                    <p><span class="neon-text">root@zeeo:~#</span> sandbox --status idle</p>
+                    <p class="text-emerald-400">&gt; [OK] Editor siap menerima input kode profesional.</p>
+                    <p class="text-white font-semibold">&gt; Klik tombol RUN untuk merender pratinjau.</p>
                     <p class="animate-pulse text-[#00ff66]">_</p>
                 </div>
             </div>
@@ -127,7 +128,7 @@
                     <span class="text-[#00ff66] code-font text-xs uppercase tracking-widest">// Enterprise Sandbox</span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Live HTML & CSS Code Workspace</h2>
                 </div>
-                <p class="text-gray-400 text-xs max-w-md">Pratinjau di sebelah kanan bersifat dinamis dan <strong class="text-white">hanya akan merender halaman profesional di bawah ini ketika tombol RUN CODE ditekan</strong>.</p>
+                <p class="text-gray-400 text-xs max-w-md">Contoh kode di bawah ini memuat template <strong class="text-white">Cyber SaaS Dashboard</strong> profesional. Pratinjau tidak akan muncul sebelum tombol <strong class="text-white">RUN CODE</strong> ditekan.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 glass-panel rounded-3xl p-6 neon-glow">
@@ -193,32 +194,38 @@
             </div>
         </section>
 
-        <!-- SECTION 2: TikTok Direct Recon (Nyata & Langsung Akses Platform) -->
+        <!-- SECTION 2: GitHub Profile Recon -->
         <section id="recon" class="space-y-6 pt-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                    <span class="text-cyan-400 code-font text-xs uppercase tracking-widest">// Direct Platform Recon</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">TikTok Direct Profile Lookup</h2>
+                    <span class="text-cyan-400 code-font text-xs uppercase tracking-widest">// OSINT Recon Tool</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Live GitHub Profile Inspector</h2>
                 </div>
-                <p class="text-gray-400 text-xs max-w-md">Karena pembatasan proteksi CORS browser, akses langsung profil TikTok target dijalankan melalui tautan kueri terarah yang cepat dan akurat.</p>
+                <p class="text-gray-400 text-xs max-w-md">Menarik data profil publik secara langsung melalui GitHub REST API.</p>
             </div>
 
             <div class="glass-panel rounded-3xl p-6 neon-glow space-y-6 border-cyan-500/30">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="md:col-span-2">
-                        <label class="text-xs text-gray-400 code-font block mb-2">Target Username TikTok:</label>
-                        <!-- Kolom bernilai default zeeo sesuai permintaan -->
-                        <input type="text" id="reconUsername" value="zeeo" class="w-full bg-[#010204] border border-gray-800 rounded-xl px-4 py-3 text-xs text-cyan-400 code-font focus:outline-none focus:border-cyan-400" />
+                        <label class="text-xs text-gray-400 code-font block mb-2">Target Username:</label>
+                        <!-- Nilai default diatur ke vektorzero0-dev -->
+                        <input type="text" id="reconUsername" value="vektorzero0-dev" class="w-full bg-[#010204] border border-gray-800 rounded-xl px-4 py-3 text-xs text-cyan-400 code-font focus:outline-none focus:border-cyan-400" />
                     </div>
                     <div class="flex items-end">
-                        <button onclick="openTikTokProfile()" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold py-3 rounded-xl text-xs code-font transition shadow-[0_0_20px_rgba(56,189,248,0.4)] cursor-pointer">
-                            🚀 BUKA PROFIL TIKTOK ASLI
+                        <button onclick="startGitHubScan()" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold py-3 rounded-xl text-xs code-font transition shadow-[0_0_20px_rgba(56,189,248,0.4)] cursor-pointer">
+                            🔍 PERIKSA PROFIL
                         </button>
                     </div>
                 </div>
 
-                <div class="p-4 bg-black/60 border border-slate-800 rounded-xl text-xs text-gray-400 space-y-1">
-                    <div>[INFO TEKNIS] Mengklik tombol di atas akan langsung mengarahkan peramban Anda menuju endpoint resmi <code class="text-cyan-400">tiktok.com/@zeeo</code> secara nyata tanpa rekayasa simulasi.</div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs code-font text-gray-400">
+                        <span>Hasil Investigasi:</span>
+                        <span id="reconStatus" class="text-yellow-400">Menunggu kueri...</span>
+                    </div>
+                    <div id="reconConsole" class="w-full bg-[#010204] border border-gray-800 rounded-2xl p-4 text-xs text-yellow-300 code-font min-h-[140px] space-y-1.5 shadow-inner">
+                        <div>[SYSTEM] Mesin siap. Masukkan username dan klik periksa.</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -273,6 +280,7 @@
             const statusDot = document.getElementById('statusDot');
             const statusText = document.getElementById('statusText');
 
+            // Sembunyikan placeholder, tampilkan iframe
             placeholder.classList.add('hidden');
             iframe.classList.remove('hidden');
 
@@ -326,21 +334,60 @@
         Inisialisasi Perintah Baru
     </button>
 </div>`;
+            // Reset ke tampilan awal sebelum di-run
             document.getElementById('previewFrame').classList.add('hidden');
             document.getElementById('placeholderView').classList.remove('hidden');
             document.getElementById('statusDot').className = "w-2 h-2 rounded-full bg-gray-600";
             document.getElementById('statusText').innerText = "Idle (Menunggu Run)";
         }
 
-        // Fungsi Membuka Profil TikTok Asli Secara Nyata
-        function openTikTokProfile() {
+        // GitHub Profile Inspector (Real API)
+        async function startGitHubScan() {
             const username = document.getElementById('reconUsername').value.trim();
+            const consoleBox = document.getElementById('reconConsole');
+            const statusLabel = document.getElementById('reconStatus');
+
             if (!username) {
-                alert("Masukkan username TikTok terlebih dahulu!");
+                consoleBox.innerHTML = `<div class="text-red-400">[!] Masukkan username terlebih dahulu!</div>`;
                 return;
             }
-            // Membuka tab baru menuju situs resmi TikTok secara nyata
-            window.open(`https://www.tiktok.com/@${username}`, '_blank');
+
+            consoleBox.innerHTML = `<div>[*] Menghubungkan ke GitHub REST API untuk target: <span class="text-white font-bold">${username}</span>...</div>`;
+            statusLabel.innerText = "Memproses...";
+            statusLabel.className = "text-cyan-400 animate-pulse";
+
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}`);
+                if (response.ok) {
+                    const profile = await response.json();
+                    consoleBox.innerHTML = `
+                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 8px;">
+                            <img src="${profile.avatar_url}" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #38bdf8;" />
+                            <div>
+                                <div style="color: #34d399; font-weight: bold;">[✓] AKUN DITEMUKAN</div>
+                                <div style="color: #fff;">${profile.name || profile.login} (@${profile.login})</div>
+                            </div>
+                        </div>
+                        <div>• Bio: ${profile.bio || 'Tidak ada bio'}</div>
+                        <div>• Repo Publik: ${profile.public_repos} | Followers: ${profile.followers}</div>
+                        <div style="margin-top: 4px;"><a href="${profile.html_url}" target="_blank" style="color: #38bdf8; text-decoration: underline;">>> Buka Profil Asli di GitHub</a></div>
+                    `;
+                    statusLabel.innerText = "Selesai";
+                    statusLabel.className = "text-green-400";
+                } else if (response.status === 404) {
+                    consoleBox.innerHTML = `<span class="text-red-400">[!] Akun "${username}" tidak ditemukan (404 Not Found).</span>`;
+                    statusLabel.innerText = "Tidak Ditemukan";
+                    statusLabel.className = "text-red-400";
+                } else {
+                    consoleBox.innerHTML = `<span class="text-red-400">[!] Terjadi kendala saat menghubungi server GitHub.</span>`;
+                    statusLabel.innerText = "Error";
+                    statusLabel.className = "text-red-400";
+                }
+            } catch (err) {
+                consoleBox.innerHTML = `<span class="text-red-400">[!] Gagal koneksi (CORS / Batas rate limit API terlampaui).</span>`;
+                statusLabel.innerText = "Gagal";
+                statusLabel.className = "text-red-400";
+            }
         }
     </script>
 </body>
