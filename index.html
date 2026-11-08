@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZEEO.LAB // Santai & Berfungsi Semua</title>
+    <title>ZEEO.LAB // Enterprise Security & Dev Workspace</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            box-sizing: border-box;
-        }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030508;
-            color: #e2e8f0;
+            background-color: #020408;
+            color: #cbd5e1;
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
-            width: 100vw;
-            overflow-x: hidden;
         }
         .code-font {
             font-family: 'Fira Code', monospace;
@@ -26,157 +24,222 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             z-index: -1;
-            opacity: 0.18;
+            opacity: 0.15;
             pointer-events: none;
         }
-        .wrapper {
-            width: 100%;
-            max-width: 620px;
-            margin: 0 auto;
-            padding: 20px 16px;
+        .glass-panel {
+            background: rgba(8, 12, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 102, 0.2);
         }
-        .card {
-            background: rgba(6, 9, 15, 0.94);
-            border: 1px solid rgba(0, 255, 102, 0.3);
-            border-radius: 18px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 25px rgba(0, 255, 102, 0.08);
-            backdrop-filter: blur(10px);
+        .neon-glow {
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.12);
         }
-        .btn {
-            display: block;
-            width: 100%;
-            background: #00ff66;
-            color: #000;
-            font-weight: 800;
-            text-align: center;
-            padding: 14px;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 13px;
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.35);
-            transition: 0.2s ease;
-        }
-        .btn:hover {
-            background: #1aff80;
-            box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
-        }
-        textarea, input {
-            width: 100%;
-            background: #000;
-            border: 1px solid #1e293b;
+        .neon-text {
             color: #00ff66;
-            padding: 12px;
-            border-radius: 10px;
-            font-family: 'Fira Code', monospace;
-            font-size: 12px;
-            resize: none;
-            outline: none;
-            margin-top: 8px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
         }
-        textarea:focus, input:focus {
-            border-color: #00ff66;
-        }
-        .preview-box {
-            background: #010204;
-            border: 1px solid #1e293b;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 10px;
-            min-height: 110px;
-            color: #34d399;
-            font-size: 12px;
-            word-break: break-all;
-        }
-        h1, h2, h3 {
-            color: #fff;
-        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #020408; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00ff66; }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#00ff66] selection:text-black">
 
-    <!-- Canvas Background Matrix Rain -->
+    <!-- Matrix Rain Canvas Background -->
     <canvas id="matrix-canvas"></canvas>
 
-    <div class="wrapper">
-        
-        <!-- Header / Pengenal -->
-        <div style="text-align: center; padding: 25px 0 15px 0;">
-            <span class="code-font" style="color: #00ff66; font-size: 11px; background: rgba(0,255,102,0.1); padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(0,255,102,0.3);">
-                // ZEEO.LAB // SANTAI & BERFUNGSI
-            </span>
-            <h1 style="font-size: 26px; margin: 15px 0 8px 0;">Vektor Zero // Cyber Space</h1>
-            <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.5;">Tempat ngulik koding, ngetes script web, & ngecek akun santai tanpa pusing.</p>
-        </div>
-
-        <!-- FITUR 1: Latihan Bikin Web (Sandbox Runner) -->
-        <div class="card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
-                <span class="code-font" style="color: #00ff66; font-size: 12px; font-weight: bold;">[LAB 01] Live HTML Code Sandbox</span>
-                <span style="width: 8px; height: 8px; background: #00ff66; border-radius: 50%; box-shadow: 0 0 8px #00ff66;"></span>
-            </div>
-            <p style="color: #94a3b8; font-size: 11px; margin-bottom: 8px;">Edit kode HTML di bawah ini sesukamu, terus klik tombol jalankan:</p>
-            
-            <textarea id="boxCode" rows="6">&lt;div style="background: #0b131a; border: 1px solid #00ff66; padding: 15px; border-radius: 10px; text-align: center;"&gt;
-    &lt;h3 style="color: #00ff66; margin: 0 0 8px 0; font-size: 15px;"&gt;Mantap, Berhasil!&lt;/h3&gt;
-    &lt;p style="color: #fff; font-size: 12px; margin: 0 0 10px 0;"&gt;Web statis bikinanmu sukses dirender.&lt;/p&gt;
-    &lt;button onclick="alert('Tombol interaktif berfungsi!')" style="background: #00ff66; color: #000; border: none; padding: 6px 12px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 11px;"&gt;Tes Klik&lt;/button&gt;
-&lt;/div&gt;</textarea>
-
-            <button class="btn" onclick="runSandbox()" style="margin-top: 12px;">▶ JALANKAN KODE</button>
-
-            <div style="margin-top: 14px;">
-                <span class="code-font" style="color: #94a3b8; font-size: 10px;">Hasil Pratinjau (Live View):</span>
-                <div id="sandboxResult" class="preview-box" style="color: #e2e8f0; background: #000;">
-                    [Klik jalankan kode di atas untuk melihat hasilnya di sini]
+    <!-- Navbar -->
+    <header class="glass-panel border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center neon-glow">
+                    <span class="neon-text code-font font-bold text-base">&gt;_</span>
+                </div>
+                <div>
+                    <span class="font-extrabold tracking-wider text-white text-lg block leading-none">ZEEO<span class="text-[#00ff66]">.LAB</span></span>
+                    <span class="text-[10px] text-gray-400 code-font">SECURE RUNTIME ENVIRONMENT</span>
                 </div>
             </div>
-        </div>
-
-        <!-- FITUR 2: Cek Akun GitHub OSINT (Live API) -->
-        <div class="card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
-                <span class="code-font" style="color: #38bdf8; font-size: 12px; font-weight: bold;">[LAB 02] Cek Akun GitHub (OSINT)</span>
-                <span style="width: 8px; height: 8px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 8px #38bdf8;"></span>
-            </div>
-            <p style="color: #94a3b8; font-size: 11px; margin-bottom: 8px;">Ketik username target untuk melacak profil publiknya secara nyata:</p>
-            
-            <input type="text" id="targetName" value="vektorzero" />
-            <button class="btn" style="background: #38bdf8; color: #000; box-shadow: 0 0 15px rgba(56,189,248,0.4); margin-top: 12px;" onclick="fetchGitHubUser()">CARI TARGET SEKARANG</button>
-
-            <div id="osintResult" class="preview-box" style="color: #fbbf24;">
-                > [SYSTEM] Menunggu kueri pencarian target...
+            <nav class="hidden md:flex space-x-8 text-xs text-gray-400 code-font">
+                <a href="#workspace" class="hover:text-[#00ff66] transition">~/code-sandbox</a>
+                <a href="#recon" class="hover:text-[#00ff66] transition">~/recon-engine</a>
+                <a href="#terminal" class="hover:text-[#00ff66] transition">~/system-logs</a>
+            </nav>
+            <div>
+                <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="bg-gradient-to-r from-emerald-500 to-[#00ff66] hover:opacity-90 text-black font-extrabold px-5 py-2.5 rounded-xl text-xs transition shadow-[0_0_20px_rgba(0,255,102,0.3)] flex items-center gap-2 code-font">
+                    <span>Grup WhatsApp</span>
+                </a>
             </div>
         </div>
+    </header>
 
-        <!-- FITUR 3: Tombol Gabung Komunitas WhatsApp -->
-        <div class="card" style="text-align: center; background: linear-gradient(135deg, rgba(0,255,102,0.06), rgba(6,9,15,0.94));">
-            <h3 style="margin: 0 0 8px 0; font-size: 16px;">Nongkrong & Tanya Jawab Koding</h3>
-            <p style="color: #94a3b8; font-size: 11px; margin-bottom: 15px; line-height: 1.5;">Mau nanya soal web, Termux, atau bikin tools sendiri? Yuk gabung di grup WhatsApp kita bareng kawan-kawan.</p>
-            <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="btn" style="display: inline-block;">
-                ⚡ MASUK GRUP DISKUSI WHATSAPP
-            </a>
-        </div>
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-16 flex-grow w-full">
+        
+        <!-- Hero Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 px-4 py-1.5 rounded-full text-[#00ff66] text-xs code-font neon-glow">
+                    <span class="w-2 h-2 rounded-full bg-[#00ff66] animate-ping"></span>
+                    <span>GITHUB PAGES DEPLOYMENT READY</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    Platform Eksekusi Koding & <span class="neon-text">OSINT Recon</span> Profesional.
+                </h1>
+                <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+                    Lingkungan kerja tingkat lanjut untuk merancang struktur halaman web dengan *live preview* real-time serta simulasi pelacakan multi-platform.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                    <a href="#workspace" class="bg-[#00ff66] hover:bg-[#1aff80] text-black font-extrabold px-7 py-3.5 rounded-2xl text-center transition text-xs code-font shadow-[0_0_25px_rgba(0,255,102,0.4)]">
+                        Buka Code Workspace ⚡
+                    </a>
+                    <a href="#recon" class="border border-gray-800 hover:border-emerald-500/40 bg-gray-900/50 text-gray-300 font-semibold px-7 py-3.5 rounded-2xl text-center transition text-xs code-font">
+                        Uji Coba Recon Engine
+                    </a>
+                </div>
+            </div>
 
-        <!-- Footer -->
-        <div style="text-align: center; color: #64748b; font-size: 10px; padding: 10px 0 20px 0;" class="code-font">
-            &copy; 2026 ZEEO.LAB // Aman, Bersih, & Berfungsi Normal.
-        </div>
+            <!-- Terminal Mockup Panel -->
+            <div class="glass-panel rounded-3xl p-6 neon-glow space-y-4">
+                <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                    </div>
+                    <span class="text-xs text-gray-500 code-font">root@github-pages:~#</span>
+                </div>
+                <div class="text-xs code-font space-y-2 text-gray-300">
+                    <p class="text-gray-500"># Status hosting statis...</p>
+                    <p><span class="neon-text">root@zeeo:~#</span> pages-deploy --status active</p>
+                    <p class="text-emerald-400">&gt; [OK] HTML5 Rendering Engine aktif.</p>
+                    <p class="text-emerald-400">&gt; [OK] GitHub REST API terhubung.</p>
+                    <p class="text-white font-semibold">&gt; Siap diakses secara publik.</p>
+                    <p class="animate-pulse text-[#00ff66]">_</p>
+                </div>
+            </div>
+        </section>
 
-    </div>
+        <!-- SECTION 1: Code Workspace (Split Screen) -->
+        <section id="workspace" class="space-y-6 pt-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="text-[#00ff66] code-font text-xs uppercase tracking-widest">// Sandbox Lingkungan Utama</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Live HTML & CSS Code Workspace</h2>
+                </div>
+                <p class="text-gray-400 text-xs max-w-md">Tulis atau ubah kode halaman web di sisi kiri, lalu klik <strong class="text-white">RUN CODE</strong> untuk merender hasilnya secara instan di sisi kanan.</p>
+            </div>
 
-    <!-- Script Utama (Logika Program) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 glass-panel rounded-3xl p-6 neon-glow">
+                <!-- Kolom Kiri: Editor -->
+                <div class="space-y-3 flex flex-col">
+                    <div class="flex items-center justify-between text-xs text-gray-400 code-font pb-2 border-b border-gray-800">
+                        <span class="neon-text font-bold">editor_source.html</span>
+                        <div class="flex items-center gap-3">
+                            <span class="text-gray-500">HTML5 / Tailwind</span>
+                            <button onclick="resetDefaultCode()" class="text-emerald-400 hover:underline text-[11px]">Reset Default</button>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <textarea id="htmlInput" rows="14" class="w-full bg-[#010204] border border-gray-800 rounded-2xl p-4 text-xs sm:text-sm text-emerald-300 code-font focus:outline-none focus:border-[#00ff66] resize-none leading-relaxed shadow-inner">&lt;div class="bg-gradient-to-br from-slate-900 to-black border border-emerald-500/40 rounded-2xl p-6 text-center space-y-4 shadow-2xl"&gt;
+    &lt;div class="inline-block bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold"&gt;ZEEO Component&lt;/div&gt;
+    &lt;h3 class="text-white font-extrabold text-xl"&gt;Selamat Datang di Web Sandbox!&lt;/h3&gt;
+    &lt;p class="text-gray-400 text-xs leading-relaxed"&gt;Halaman ini dirender secara dinamis langsung dari browser Anda.&lt;/p&gt;
+    &lt;button onclick="alert('Aksi JavaScript berhasil dieksekusi!')" class="w-full bg-[#00ff66] hover:bg-[#1aff80] text-black font-extrabold py-2.5 rounded-xl text-xs transition cursor-pointer shadow-[0_0_15px_rgba(0,255,102,0.3)]"&gt;
+        Klik Tombol Interaktif
+    &lt;/button&gt;
+&lt;/div&gt;</textarea>
+                    </div>
+                    <button onclick="executeCode()" class="w-full bg-gradient-to-r from-emerald-500 to-[#00ff66] hover:opacity-90 text-black font-extrabold py-3.5 rounded-2xl transition text-xs code-font shadow-[0_0_20px_rgba(0,255,102,0.4)] cursor-pointer flex items-center justify-center gap-2">
+                        <span>▶ RUN CODE & RENDER HALAMAN</span>
+                    </button>
+                </div>
+
+                <!-- Kolom Kanan: Live Preview -->
+                <div class="space-y-3 flex flex-col">
+                    <div class="flex items-center justify-between text-xs text-gray-400 code-font pb-2 border-b border-gray-800">
+                        <span class="text-white font-bold">Hasil Pratinjau (Live Render View)</span>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#00ff66] animate-ping" id="statusDot"></span>
+                            <span class="text-[10px] text-gray-400" id="statusText">Ready</span>
+                        </div>
+                    </div>
+                    <div class="flex-grow bg-[#010204] border border-gray-800 rounded-2xl overflow-hidden min-h-[380px] flex flex-col relative shadow-inner">
+                        <iframe id="previewFrame" class="w-full h-full flex-grow border-0 bg-slate-950"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: GitHub Profile Recon (Real API) -->
+        <section id="recon" class="space-y-6 pt-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="text-cyan-400 code-font text-xs uppercase tracking-widest">// GitHub OSINT Tool</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Live GitHub Profile Inspector</h2>
+                </div>
+                <p class="text-gray-400 text-xs max-w-md">Menarik data profil publik secara langsung melalui GitHub REST API dari peramban Anda.</p>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-6 neon-glow space-y-6 border-cyan-500/30">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="md:col-span-2">
+                        <label class="text-xs text-gray-400 code-font block mb-2">Target Username:</label>
+                        <input type="text" id="reconUsername" value="vektorzero" class="w-full bg-[#010204] border border-gray-800 rounded-xl px-4 py-3 text-xs text-cyan-400 code-font focus:outline-none focus:border-cyan-400" />
+                    </div>
+                    <div class="flex items-end">
+                        <button onclick="startGitHubScan()" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold py-3 rounded-xl text-xs code-font transition shadow-[0_0_20px_rgba(56,189,248,0.4)] cursor-pointer">
+                            🔍 PERIKSA PROFIL
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs code-font text-gray-400">
+                        <span>Hasil Investigasi:</span>
+                        <span id="reconStatus" class="text-yellow-400">Menunggu kueri...</span>
+                    </div>
+                    <div id="reconConsole" class="w-full bg-[#010204] border border-gray-800 rounded-2xl p-4 text-xs text-yellow-300 code-font min-h-[140px] space-y-1.5 shadow-inner">
+                        <div>[SYSTEM] Mesin siap. Masukkan username dan klik periksa.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Terminal Log -->
+        <section id="terminal" class="glass-panel rounded-3xl p-6 neon-glow space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+                <div class="flex items-center space-x-2">
+                    <span class="text-emerald-400 code-font font-bold">&gt;_</span>
+                    <span class="text-white font-bold text-sm code-font">Hosting Status</span>
+                </div>
+                <span class="text-xs text-emerald-400 code-font">GITHUB PAGES ACTIVE</span>
+            </div>
+            <div class="text-xs code-font space-y-1 text-gray-400">
+                <p>[INFO] Halaman statis dimuat langsung dari repository publik.</p>
+                <p>[SUCCESS] Skrip klien berjalan tanpa memerlukan server backend tambahan.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-gray-800 py-8 text-center text-xs text-gray-500 code-font">
+        <p>&copy; 2026 ZEEO.LAB // GitHub Pages Deployment.</p>
+    </footer>
+
+    <!-- Script -->
     <script>
-        // Efek Background Matrix Rain yang Mulus
+        // Matrix Rain Background
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
-        
+
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -185,12 +248,12 @@
         window.addEventListener('resize', resizeCanvas);
 
         const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZZEEOVEKTOR010101';
-        const fontSize = 13;
+        const fontSize = 14;
         let columns = Math.floor(canvas.width / fontSize);
         const drops = Array(columns).fill(1);
 
         function drawMatrix() {
-            ctx.fillStyle = 'rgba(3, 5, 8, 0.14)';
+            ctx.fillStyle = 'rgba(2, 4, 8, 0.15)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = '#00ff66';
             ctx.font = fontSize + 'px monospace';
@@ -206,47 +269,101 @@
         }
         setInterval(drawMatrix, 50);
 
-        // Fungsi Lab 1: Render Kode HTML Sandbox
-        function runSandbox() {
-            const code = document.getElementById('boxCode').value;
-            const resultBox = document.getElementById('sandboxResult');
-            resultBox.innerHTML = code;
-        }
-        // Otomatis jalankan preview saat pertama kali dibuka
-        runSandbox();
+        // Code Sandbox Runner
+        function executeCode() {
+            const code = document.getElementById('htmlInput').value;
+            const iframe = document.getElementById('previewFrame');
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
 
-        // Fungsi Lab 2: Tarik Data GitHub API Real
-        async function fetchGitHubUser() {
-            const user = document.getElementById('targetName').value.trim() || 'vektorzero';
-            const box = document.getElementById('osintResult');
-            box.innerHTML = `> [*] Menghubungkan ke API server untuk target: <span style="color:#fff">${user}</span>...`;
+            statusDot.className = "w-2 h-2 rounded-full bg-[#00ff66] animate-ping";
+            statusText.innerText = "Rendered Active";
+
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            doc.open();
+            doc.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <script src="https://cdn.tailwindcss.com"><\/script>
+                    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+                    <style>
+                        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020408; color: #f8fafc; margin: 0; padding: 20px; display: flex; align-items: center; justify-content: center; min-height: 100vh; box-sizing: border-box; }
+                    </style>
+                </head>
+                <body>
+                    <div style="width: 100%; max-width: 400px;">
+                        ${code}
+                    </div>
+                </body>
+                </html>
+            `);
+            doc.close();
+        }
+
+        function resetDefaultCode() {
+            document.getElementById('htmlInput').value = `<div class="bg-gradient-to-br from-slate-900 to-black border border-emerald-500/40 rounded-2xl p-6 text-center space-y-4 shadow-2xl">
+    <div class="inline-block bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold">ZEEO Component</div>
+    <h3 class="text-white font-extrabold text-xl">Selamat Datang di Web Sandbox!</h3>
+    <p class="text-gray-400 text-xs leading-relaxed">Halaman ini dirender secara dinamis langsung dari browser Anda.</p>
+    <button onclick="alert('Aksi JavaScript berhasil dieksekusi!')" class="w-full bg-[#00ff66] hover:bg-[#1aff80] text-black font-extrabold py-2.5 rounded-xl text-xs transition cursor-pointer shadow-[0_0_15px_rgba(0,255,102,0.3)]">
+        Klik Tombol Interaktif
+    </button>
+</div>`;
+            executeCode();
+        }
+
+        window.onload = function() {
+            executeCode();
+        };
+
+        // GitHub Profile Inspector (Real API)
+        async function startGitHubScan() {
+            const username = document.getElementById('reconUsername').value.trim();
+            const consoleBox = document.getElementById('reconConsole');
+            const statusLabel = document.getElementById('reconStatus');
+
+            if (!username) {
+                consoleBox.innerHTML = `<div class="text-red-400">[!] Masukkan username terlebih dahulu!</div>`;
+                return;
+            }
+
+            consoleBox.innerHTML = `<div>[*] Menghubungkan ke GitHub REST API untuk target: <span class="text-white font-bold">${username}</span>...</div>`;
+            statusLabel.innerText = "Memproses...";
+            statusLabel.className = "text-cyan-400 animate-pulse";
 
             try {
-                const res = await fetch(`https://api.github.com/users/${user}`);
-                if (res.ok) {
-                    const data = await res.json();
-                    box.innerHTML = `
-                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 10px;">
-                            <img src="${data.avatar_url}" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #00ff66;" />
+                const response = await fetch(`https://api.github.com/users/${username}`);
+                if (response.ok) {
+                    const profile = await response.json();
+                    consoleBox.innerHTML = `
+                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 8px;">
+                            <img src="${profile.avatar_url}" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #38bdf8;" />
                             <div>
-                                <div style="color: #34d399; font-weight: bold;">[✓] AKUN DITEMUKAN!</div>
-                                <div style="color: #fff; font-size: 12px;">${data.name || data.login} (@${data.login})</div>
+                                <div style="color: #34d399; font-weight: bold;">[✓] AKUN DITEMUKAN</div>
+                                <div style="color: #fff;">${profile.name || profile.login} (@${profile.login})</div>
                             </div>
                         </div>
-                        <div style="font-size: 11px; color: #94a3b8; line-height: 1.6;">
-                            <div>• Bio: ${data.bio || 'Tidak ada bio'}</div>
-                            <div>• Total Repo Publik: ${data.public_repos} buah</div>
-                            <div>• Pengikut / Mengikuti: ${data.followers} / ${data.following}</div>
-                            <div style="margin-top: 6px;"><a href="${data.html_url}" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;">>> Buka Profil Asli</a></div>
-                        </div>
+                        <div>• Bio: ${profile.bio || 'Tidak ada bio'}</div>
+                        <div>• Repo Publik: ${profile.public_repos} | Followers: ${profile.followers}</div>
+                        <div style="margin-top: 4px;"><a href="${profile.html_url}" target="_blank" style="color: #38bdf8; text-decoration: underline;">>> Buka Profil Asli di GitHub</a></div>
                     `;
-                } else if (res.status === 404) {
-                    box.innerHTML = `<span style="color: #ef4444;">[!] Username "${user}" tidak ditemukan (404 Not Found).</span>`;
+                    statusLabel.innerText = "Selesai";
+                    statusLabel.className = "text-green-400";
+                } else if (response.status === 404) {
+                    consoleBox.innerHTML = `<span class="text-red-400">[!] Akun "${username}" tidak ditemukan (404 Not Found).</span>`;
+                    statusLabel.innerText = "Tidak Ditemukan";
+                    statusLabel.className = "text-red-400";
                 } else {
-                    box.innerHTML = `<span style="color: #ef4444;">[!] Terjadi kendala saat mengakses server.</span>`;
+                    consoleBox.innerHTML = `<span class="text-red-400">[!] Terjadi kendala saat menghubungi server GitHub.</span>`;
+                    statusLabel.innerText = "Error";
+                    statusLabel.className = "text-red-400";
                 }
-            } catch (e) {
-                box.innerHTML = `<span style="color: #ef4444;">[!] Gagal terhubung ke jaringan (CORS / Koneksi Terbatas).</span>`;
+            } catch (err) {
+                consoleBox.innerHTML = `<span class="text-red-400">[!] Gagal koneksi (CORS / Batas rate limit API terlampaui).</span>`;
+                statusLabel.innerText = "Gagal";
+                statusLabel.className = "text-red-400";
             }
         }
     </script>
