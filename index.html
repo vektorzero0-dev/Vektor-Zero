@@ -73,20 +73,20 @@
             <div class="space-y-6 text-center md:text-left">
                 <div class="inline-flex items-center space-x-2 bg-[#00ff66]/10 border border-[#00ff66]/30 px-3 py-1 rounded-full text-[#00ff66] text-xs code-font">
                     <span class="w-2 h-2 rounded-full bg-[#00ff66] animate-pulse"></span>
-                    <span>Status: Alat Fungsional Nyata Tanpa Simulasi</span>
+                    <span>Status: Ruang Eksplorasi Koding & Siber Aktif</span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                    Eksplorasi Alat & Koding <span class="neon-text">Nyata (Real-World)</span>.
+                    Belajar Koding & Uji <span class="neon-text">Cyber Security</span> Dari Nol.
                 </h1>
                 <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
-                    Platform edukasi siber mandiri yang berisi kode dan utilitas fungsional nyata—mulai dari pemindai jaringan IP publik hingga generator kriptografi murni di browser.
+                    Platform interaktif tempat kamu bisa berlatih membuat halaman web profesional serta mencoba langsung alat investigasi siber (Sherlock OSINT) tanpa simulasi palsu.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-2">
                     <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="bg-[#00ff66] hover:bg-[#1aff80] text-black font-bold px-6 py-3 rounded-xl text-center transition text-sm shadow-[0_0_20px_rgba(0,255,102,0.5)]">
-                        Gabung Lingkaran Diskusi ⚡
+                        Gabung Grup WhatsApp ⚡
                     </a>
                     <a href="#workspace" class="border border-gray-700 hover:border-[#00ff66] text-gray-300 hover:text-white font-medium px-6 py-3 rounded-xl text-center transition text-sm code-font">
-                        Buka Code Workspace
+                        Coba Fitur Sekarang
                     </a>
                 </div>
             </div>
@@ -102,69 +102,77 @@
                     <span class="text-xs text-gray-500 code-font">root@zeeo-sys:~#</span>
                 </div>
                 <div class="pt-4 text-xs sm:text-sm code-font space-y-2 text-gray-300">
-                    <p class="text-gray-500"># Inisialisasi sistem utilitas nyata</p>
-                    <p><span class="neon-text">root@zeeo:~#</span> init_real_tools --no-simulation</p>
-                    <p class="text-emerald-400">&gt; Memuat modul kriptografi browser (SubtleCrypto)...</p>
-                    <p class="text-emerald-400">&gt; Menghubungkan API jaringan publik...</p>
-                    <p class="text-white font-semibold">&gt; Sistem siap melayani perintah nyata.</p>
+                    <p class="text-gray-500"># Inisialisasi ruang latihan & alat siber</p>
+                    <p><span class="neon-text">root@zeeo:~#</span> start_workspace --interactive</p>
+                    <p class="text-emerald-400">&gt; Modul latihan pembuatan halaman web aktif...</p>
+                    <p class="text-emerald-400">&gt; Fitur Sherlock OSINT Live Inspector siap...</p>
+                    <p class="text-white font-semibold">&gt; Sistem siap dieksplorasi sepenuhnya.</p>
                     <p class="animate-pulse text-[#00ff66]">_</p>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Code Workspace & Real Tools Showcase -->
+        <!-- Interactive Code Workspace & App Showcase -->
         <section id="workspace" class="space-y-6 pt-4">
             <div class="text-center max-w-xl mx-auto space-y-2">
-                <div class="text-[#00ff66] code-font text-xs uppercase tracking-widest">// Real Utility Workspace</div>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">Eksplorasi Utilitas & Halaman Fungsional Nyata</h2>
-                <p class="text-gray-400 text-xs sm:text-sm">Pilih menu tab di bawah untuk melihat baris kode aslinya, lalu tekan tombol RUN untuk mengaktifkan fungsi nyatanya.</p>
+                <div class="text-[#00ff66] code-font text-xs uppercase tracking-widest">// Interactive Workspace</div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Latihan Pembuatan Halaman & Fitur Sherlock Nyata</h2>
+                <p class="text-gray-400 text-xs sm:text-sm">Pilih menu di bawah: gunakan tab latihan koding untuk melihat hasil halaman profesional, atau langsung uji fitur Sherlock OSINT asli.</p>
             </div>
 
-            <!-- Menu Tab Navigation (100% Real Tools) -->
+            <!-- Menu Tab Navigation -->
             <div class="flex flex-wrap justify-center gap-2" id="appMenu">
-                <button onclick="switchTab('network')" id="tab-network" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-[#00ff66] bg-[#00ff66]/10 text-[#00ff66] code-font">
-                    🌐 01. Live IP & Network Scanner
+                <button onclick="switchTab('exercise')" id="tab-exercise" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-[#00ff66] bg-[#00ff66]/10 text-[#00ff66] code-font">
+                    💻 01. Latihan Membuat Halaman Web
                 </button>
-                <button onclick="switchTab('crypto')" id="tab-crypto" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font">
-                    🔐 02. Real SHA-256 Hash Generator
-                </button>
-                <button onclick="switchTab('landing')" id="tab-landing" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font">
-                    📄 03. Professional Landing Page
-                </button>
-                <button onclick="switchTab('dashboard')" id="tab-dashboard" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font">
-                    ⚡ 04. System Control Dashboard
+                <button onclick="switchTab('sherlock')" id="tab-sherlock" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font">
+                    🕵️‍♂️ 02. Fitur Sherlock OSINT Asli (Live)
                 </button>
             </div>
 
             <!-- Editor & Preview Grid Container -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-black/80 border border-gray-800 rounded-2xl p-4 sm:p-6 neon-glow">
                 
-                <!-- Sisi Kiri: Terminal Code Viewer -->
-                <div class="space-y-3 flex flex-col">
+                <!-- Sisi Kiri: Panel Kiri -->
+                <div class="space-y-3 flex flex-col" id="leftPanel">
                     <div class="flex items-center justify-between text-xs text-gray-400 code-font pb-2 border-b border-gray-800">
-                        <span id="fileName" class="neon-text font-bold">network_scanner.js</span>
-                        <span id="fileLang" class="text-gray-500">JavaScript / Fetch API</span>
+                        <span id="fileName" class="neon-text font-bold">latihan_halaman.html</span>
+                        <span id="fileLang" class="text-gray-500">HTML5 / Tailwind CSS</span>
                     </div>
                     <div class="flex-grow">
                         <textarea id="codeView" readonly rows="12" class="w-full bg-[#030508] border border-gray-800 rounded-xl p-3 text-xs sm:text-sm text-emerald-300 code-font focus:outline-none resize-none leading-relaxed"></textarea>
                     </div>
                     <!-- TOMBOL RUN -->
                     <button id="runButton" onclick="executeRun()" class="w-full bg-[#00ff66] hover:bg-[#1aff80] text-black font-bold py-3 rounded-xl transition text-xs sm:text-sm shadow-[0_0_15px_rgba(0,255,102,0.4)] code-font cursor-pointer">
-                        ▶ RUN CODE & JALANKAN ALAT NYATA
+                        ▶ RUN KODE & LIHAT HALAMAN MODERN
                     </button>
                 </div>
 
-                <!-- Sisi Kanan: Live App Preview Box (BERSIH DI AWAL) -->
+                <!-- Sisi Kanan: Live App Preview / Fitur Nyata -->
                 <div class="space-y-3 flex flex-col">
                     <div class="flex items-center justify-between text-xs text-gray-400 code-font pb-2 border-b border-gray-800">
-                        <span class="text-white font-bold">Output / Pratinjau Fungsional (Live)</span>
+                        <span class="text-white font-bold" id="previewTitle">Pratinjau Halaman Modern (Live View)</span>
                         <span class="w-2 h-2 rounded-full bg-gray-600" id="statusIndicator"></span>
                     </div>
                     <div id="previewBox" class="flex-grow bg-[#030508] border border-gray-800 rounded-xl p-4 flex items-center justify-center min-h-[320px] overflow-auto text-gray-500 text-xs italic code-font">
-                        [Pratinjau kosong. Klik tombol RUN CODE untuk mengaktifkan fungsi aslinya.]
+                        [Pratinjau kosong. Klik tombol RUN di sebelah kiri untuk memuat halaman.]
                     </div>
                 </div>
 
+            </div>
+
+            <!-- CTA Box Menarik di Bawah Workspace -->
+            <div class="bg-gradient-to-r from-emerald-950/40 via-black to-emerald-950/40 border border-emerald-500/40 rounded-2xl p-6 sm:p-8 text-center space-y-4 neon-glow">
+                <span class="text-emerald-400 code-font text-xs uppercase tracking-widest">// Bergabunglah Bersama Developer Lain</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Tertarik Bikin Tools Sendiri & Belajar Bareng?</h3>
+                <p class="text-gray-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+                    Jangan cuma lihat! Kuasai pembuatan script web, manipulasi terminal Termux, dan teknik dasar ethical hacking langsung bersama komunitas kami. 100% gratis dan terbuka untuk pemula.
+                </p>
+                <div class="pt-2 flex flex-wrap justify-center gap-4">
+                    <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" class="bg-[#00ff66] hover:bg-[#1aff80] text-black font-bold px-8 py-3.5 rounded-xl transition text-sm shadow-[0_0_20px_rgba(0,255,102,0.5)] flex items-center gap-2">
+                        <span>💬 Gabung Grup WhatsApp Sekarang</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -200,7 +208,7 @@
         <p>&copy; 2026 ZEEO. All systems nominal. Secure and open source.</p>
     </footer>
 
-    <!-- Script Utama (Matrix Rain + 100% Real Tools Engine) -->
+    <!-- Script Utama -->
     <script>
         // 1. Matrix Rain Background
         const canvas = document.getElementById('matrix-canvas');
@@ -240,178 +248,142 @@
         }
         setInterval(drawMatrix, 50);
 
-        // 2. Data Kode Utilitas & Halaman Nyata (Non-Simulasi)
-        const appWorkspaces = {
-            network: {
-                filename: "network_scanner.js",
-                lang: "JavaScript / Fetch API",
-                code: `// Alat Pemindai IP Publik & Jaringan Nyata (Bukan Simulasi)
-async function fetchRealIPData() {
-    const displayBox = document.getElementById('realIpOutput');
-    displayBox.innerHTML = "Menghubungkan ke API jaringan publik...";
-    
-    try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        
-        displayBox.innerHTML = \`
-            <div style="color: #34d399; font-weight: bold; margin-bottom: 6px;">[✓] Data Jaringan Anda Berhasil Ditarik:</div>
-            <div>• Alip Publik (IP): \${data.ip}</div>
-            <div>• Penyedia ISP: \${data.org}</div>
-            <div>• Kota / Negara: \${data.city}, \${data.country_name}</div>
-            <div>• Zona Waktu: \${data.timezone}</div>
-        \`;
-    } catch (err) {
-        displayBox.innerHTML = "[!] Gagal menarik data jaringan (CORS / Koneksi Terbatas).";
-    }
-}
-fetchRealIPData();`,
-                type: "network"
-            },
-            crypto: {
-                filename: "sha256_hasher.js",
-                lang: "JavaScript / SubtleCrypto",
-                code: `// Generator SHA-256 Kriptografi Nyata Standar Industri
-async function generateRealHash(text) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(text);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
+        let activeTab = 'exercise';
 
-// Fungsi event saat tombol ditekan di pratinjau
-async function handleHashInput(val) {
-    const resultBox = document.getElementById('realHashOut');
-    const hashVal = await generateRealHash(val);
-    resultBox.innerText = hashVal;
-}`,
-                type: "crypto"
-            },
-            landing: {
-                filename: "landing_page.html",
-                lang: "HTML5 / Tailwind CSS",
-                code: `<div style="width: 100%; min-height: 100%; background: #0b0f19; color: #f3f4f6; font-family: 'Inter', sans-serif; padding: 20px; box-sizing: border-box; border-radius: 10px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2937; padding-bottom: 12px; margin-bottom: 20px;">
-        <span style="font-weight: bold; color: #10b981; font-size: 14px;">🚀 NEXUS.CLOUD</span>
-        <button onclick="alert('Navigasi aktif!')" style="background: #10b981; color: #000; border: none; padding: 4px 10px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 11px;">Mulai</button>
-    </div>
-    <div style="text-align: center; padding: 10px 0;">
-        <h1 style="font-size: 18px; font-weight: 800; margin: 0 0 10px 0; color: #fff;">Infrastruktur Cloud Tanpa Batas</h1>
-        <p style="font-size: 11px; color: #94a3b8; max-width: 300px; margin: 0 auto 16px auto; line-height: 1.5;">Halaman web profesional utuh yang dirender secara nyata saat tombol RUN ditekan.</p>
-        <button onclick="alert('Berhasil!')" style="background: #10b981; color: #0b0f19; border: none; padding: 8px 16px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">Deploy Sekarang</button>
-    </div>
-</div>`
-            },
-            dashboard: {
-                filename: "enterprise_dashboard.html",
-                lang: "HTML5 / Tailwind CSS",
-                code: `<div style="width: 100%; min-height: 100%; background: #07090f; color: #fff; font-family: 'Inter', sans-serif; padding: 20px; box-sizing: border-box; border-radius: 10px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 12px; margin-bottom: 16px;">
-        <h2 style="font-size: 14px; font-weight: bold; margin: 0; color: #34d399;">⚡ Enterprise Command Center</h2>
-        <span style="background: rgba(16,185,129,0.2); color: #34d399; padding: 3px 8px; font-size: 9px; border-radius: 6px; font-family: monospace;">ONLINE</span>
-    </div>
-    <div style="background: #0f172a; padding: 12px; border-radius: 8px; border: 1px solid #1e293b; font-size: 11px; color: #94a3b8; line-height: 1.6;">
-        <div>• Status Server: <span style="color: #34d399;">Optimal</span></div>
-        <div>• Enkripsi Data: <span style="color: #60a5fa;">AES-256 Aktif</span></div>
-    </div>
-</div>`
-            }
-        };
-
-        let activeTab = 'network';
-
-        // Fungsi saat tab menu diklik (Memuat kode asli ke editor, pratinjau bersih)
+        // Fungsi saat tab menu diklik
         function switchTab(key) {
             activeTab = key;
-            const data = appWorkspaces[key];
-            
-            document.getElementById('codeView').value = data.code;
-            document.getElementById('fileName').innerText = data.filename;
-            document.getElementById('fileLang').innerText = data.lang;
-
+            const leftPanel = document.getElementById('leftPanel');
             const preview = document.getElementById('previewBox');
-            preview.innerHTML = '[Pratinjau kosong. Klik tombol RUN CODE untuk mengaktifkan fungsi aslinya.]';
-            preview.className = "flex-grow bg-[#030508] border border-gray-800 rounded-xl p-4 flex items-center justify-center min-h-[320px] overflow-auto text-gray-500 text-xs italic code-font";
-            
-            document.getElementById('statusIndicator').className = "w-2 h-2 rounded-full bg-gray-600";
+            const previewTitle = document.getElementById('previewTitle');
 
-            ['network', 'crypto', 'landing', 'dashboard'].forEach(k => {
-                const btn = document.getElementById(`tab-${k}`);
-                if (k === key) {
-                    btn.className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-[#00ff66] bg-[#00ff66]/10 text-[#00ff66] code-font";
-                } else {
-                    btn.className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font";
-                }
-            });
-        }
+            if (key === 'exercise') {
+                leftPanel.style.display = 'flex';
+                document.getElementById('fileName').innerText = 'latihan_halaman.html';
+                document.getElementById('fileLang').innerText = 'HTML5 / Tailwind CSS';
+                document.getElementById('codeView').value = `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Cloud Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white p-6">
+    <div class="max-w-md mx-auto bg-slate-900 border border-emerald-500/30 rounded-2xl p-6 space-y-4">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">// Latihan Koding</span>
+        <h1 class="text-2xl font-extrabold">Membangun Web Profesional</h1>
+        <p class="text-slate-400 text-sm">Contoh halaman modern untuk menarik minat belajar koding dari nol.</p>
+        <button onclick="alert('Mantap Zeeo! Ayo kembangkan skill kodingmu!')" class="w-full bg-emerald-500 text-slate-950 font-bold py-2.5 rounded-xl cursor-pointer">Klik Tombol Ini</button>
+    </div>
+</body>
+</html>`;
+                document.getElementById('runButton').innerText = "▶ RUN KODE & LIHAT HALAMAN MODERN";
+                
+                previewTitle.innerText = "Pratinjau Halaman Modern (Live View)";
+                preview.innerHTML = '[Pratinjau kosong. Klik tombol RUN di sebelah kiri untuk memuat halaman.]';
+                preview.className = "flex-grow bg-[#030508] border border-gray-800 rounded-xl p-4 flex items-center justify-center min-h-[320px] overflow-auto text-gray-500 text-xs italic code-font";
 
-        // Fungsi Tombol RUN (Menjalankan fungsi nyata atau merender halaman)
-        async function executeRun() {
-            const preview = document.getElementById('previewBox');
-            document.getElementById('statusIndicator').className = "w-2 h-2 rounded-full bg-[#00ff66] animate-ping";
+                document.getElementById('tab-exercise').className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-[#00ff66] bg-[#00ff66]/10 text-[#00ff66] code-font";
+                document.getElementById('tab-sherlock').className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font";
+            } else {
+                leftPanel.style.display = 'flex';
+                document.getElementById('fileName').innerText = 'sherlock_osint.info';
+                document.getElementById('fileLang').innerText = 'Live Cyber Tool';
+                document.getElementById('codeView').value = `/*
+  FITUR SHERLOCK OSINT ASLI & NYATA
+  ---------------------------------
+  Fitur ini terhubung langsung ke server publik (GitHub API) 
+  untuk melacak akun asli di dunia nyata. 
+  
+  Gunakan panel di sebelah kanan untuk langsung menguji 
+  alat siber secara interaktif!
+*/`;
+                document.getElementById('runButton').innerText = "▶ RE-SCAN / UJI KEMBALI ALAT OSINT";
 
-            if (activeTab === 'network') {
-                preview.className = "flex-grow bg-[#030508] border border-gray-800 rounded-xl p-4 flex flex-col justify-center items-start text-xs code-font text-gray-200 overflow-auto";
+                previewTitle.innerText = "Sherlock OSINT Live Inspector (Fitur Nyata)";
+                preview.className = "flex-grow bg-[#030508] border border-gray-800 rounded-xl p-4 flex flex-col justify-start items-start text-xs code-font text-gray-200 overflow-auto";
                 preview.innerHTML = `
                     <div style="width: 100%;">
-                        <div style="color: #00ff66; font-weight: bold; margin-bottom: 10px;">🌐 PEMINDAI IP & JARINGAN PUBLIK (REAL-TIME)</div>
-                        <div id="realIpOutput" style="background: #000; border: 1px solid #1f2937; padding: 12px; border-radius: 8px; color: #fbbf24; line-height: 1.6;">
-                            Menghubungkan ke API jaringan publik...
+                        <div style="color: #00ff66; font-weight: bold; margin-bottom: 10px;">🕵️‍♂️ SHERLOCK OSINT RECON (LIVE API)</div>
+                        <p style="color: #94a3b8; font-size: 10px; margin-bottom: 8px;">Ketik username target untuk melacak profil publik aslinya:</p>
+                        <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+                            <input type="text" id="targetUser" value="vektorzero" style="flex: 1; background: #000; border: 1px solid #334155; padding: 7px 10px; font-size: 11px; color: #00ff66; border-radius: 6px; outline: none;" />
+                            <button onclick="realGitHubScan()" style="background: #00ff66; color: #000; border: none; padding: 7px 14px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">CARI</button>
+                        </div>
+                        <div id="githubResult" style="background: #000; border: 1px solid #1e293b; border-radius: 8px; padding: 12px; font-size: 11px; color: #fbbf24; width: 100%; box-sizing: border-box; min-height: 120px;">
+                            > [SYSTEM] Siap menarik data profil nyata... Klik tombol Cari di atas untuk memulai.
+                        </div>
+                        <!-- CTA Tambahan di Dalam Hasil Sherlock -->
+                        <div style="margin-top: 14px; background: rgba(0,255,102,0.08); border: 1px solid rgba(0,255,102,0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                            <div style="color: #fff; font-size: 10px; margin-bottom: 6px; font-weight: bold;">Ingin tahu cara kerja script Sherlock di Termux?</div>
+                            <a href="https://chat.whatsapp.com/HgZEFRimuoD0GEhoEJ9eHH" target="_blank" style="display: inline-block; background: #00ff66; color: #000; padding: 5px 12px; font-size: 10px; font-weight: bold; border-radius: 4px; text-decoration: none;">Diskusi di Grup WhatsApp ⚡</a>
                         </div>
                     </div>
                 `;
-                // Eksekusi API nyata
-                try {
-                    const res = await fetch('https://ipapi.co/json/');
-                    const dat = await res.json();
-                    document.getElementById('realIpOutput').innerHTML = `
-                        <div style="color: #34d399; font-weight: bold; margin-bottom: 6px;">[✓] Data Jaringan Anda Berhasil Ditarik:</div>
-                        <div>• IP Publik: ${dat.ip}</div>
-                        <div>• ISP / Jaringan: ${dat.org}</div>
-                        <div>• Negara / Kota: ${dat.country_name} (${dat.city})</div>
-                        <div>• Zona Waktu: ${dat.timezone}</div>
-                    `;
-                } catch (e) {
-                    document.getElementById('realIpOutput').innerHTML = "[!] Gagal menarik data jaringan (CORS atau batasan jaringan lokal).";
-                }
-            } else if (activeTab === 'crypto') {
-                preview.className = "flex-grow bg-[#030508] border border-gray-800 rounded-xl p-4 flex flex-col justify-center items-start text-xs code-font text-gray-200 overflow-auto";
-                preview.innerHTML = `
-                    <div style="width: 100%;">
-                        <div style="color: #00ff66; font-weight: bold; margin-bottom: 10px;">🔐 GENERATOR HASH SHA-256 NYATA</div>
-                        <div style="margin-bottom: 8px;">Ketik teks bebas untuk dienkripsi secara kriptografis:</div>
-                        <input type="text" id="plainInput" value="VektorZero2026" oninput="handleHashInput(this.value)" style="width: 100%; background: #000; border: 1px solid #334155; padding: 8px; color: #38bdf8; border-radius: 6px; outline: none; box-sizing: border-box; margin-bottom: 10px;" />
-                        <div style="color: #94a3b8; margin-bottom: 4px;">Hasil Enkripsi SHA-256 Asli:</div>
-                        <div id="realHashOut" style="background: #000; border: 1px solid #1e293b; padding: 10px; border-radius: 6px; color: #34d399; word-break: break-all; font-family: monospace;">Loading...</div>
-                    </div>
-                `;
-                handleHashInput("VektorZero2026");
-            } else {
+                realGitHubScan();
+
+                document.getElementById('tab-exercise').className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font";
+                document.getElementById('tab-sherlock').className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-[#00ff66] bg-[#00ff66]/10 text-[#00ff66] code-font";
+            }
+
+            document.getElementById('statusIndicator').className = "w-2 h-2 rounded-full bg-gray-600";
+        }
+
+        // Fungsi Eksekusi Tombol RUN
+        function executeRun() {
+            const preview = document.getElementById('previewBox');
+            document.getElementById('statusIndicator').className = "w-2 h-2 rounded-full bg-[#00ff66] animate-ping";
+
+            if (activeTab === 'exercise') {
                 preview.className = "flex-grow bg-[#030508] border border-gray-800 rounded-xl p-2 overflow-auto";
                 preview.innerHTML = document.getElementById('codeView').value;
+            } else {
+                realGitHubScan();
             }
         }
 
-        // Fungsi enkripsi nyata untuk tab crypto
-        async function generateRealHash(text) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(text);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
+        // Fungsi Fitur Nyata Sherlock / GitHub API
+        async function realGitHubScan() {
+            const inputEl = document.getElementById('targetUser');
+            if (!inputEl) return;
+            const target = inputEl.value.trim() || "vektorzero";
+            const resBox = document.getElementById('githubResult');
+            if (!resBox) return;
 
-        async function handleHashInput(val) {
-            const out = document.getElementById('realHashOut');
-            if (!out) return;
-            const hashVal = await generateRealHash(val);
-            out.innerText = hashVal;
+            resBox.innerHTML = `> [+] Menghubungkan ke server API untuk target: <span style="color:#fff">${target}</span>...\n`;
+
+            try {
+                const response = await fetch(`https://api.github.com/users/${target}`);
+                if (response.ok) {
+                    const profile = await response.json();
+                    resBox.innerHTML = `
+                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 10px;">
+                            <img src="${profile.avatar_url}" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #00ff66;" />
+                            <div>
+                                <div style="color: #34d399; font-weight: bold;">[✓] AKUN PUBLIK DITEMUKAN!</div>
+                                <div style="color: #fff; font-size: 12px;">${profile.name || profile.login} (@${profile.login})</div>
+                            </div>
+                        </div>
+                        <div style="font-size: 10px; color: #94a3b8; line-height: 1.5;">
+                            <div>• Bio: ${profile.bio || 'Tidak ada bio'}</div>
+                            <div>• Repositori Publik: ${profile.public_repos} repo</div>
+                            <div>• Pengikut / Mengikuti: ${profile.followers} / ${profile.following}</div>
+                            <div style="margin-top: 6px;"><a href="${profile.html_url}" target="_blank" style="color: #38bdf8; text-decoration: underline;">>> Buka Profil Asli</a></div>
+                        </div>
+                    `;
+                } else if (response.status === 404) {
+                    resBox.innerHTML = `<span style="color: #ef4444;">[!] Akun dengan username "${target}" tidak ditemukan (404 Not Found).</span>`;
+                } else {
+                    resBox.innerHTML = `<span style="color: #ef4444;">[!] Terjadi kendala saat mengakses server API.</span>`;
+                }
+            } catch (err) {
+                resBox.innerHTML = `<span style="color: #ef4444;">[!] Gagal melakukan fetch request (CORS / Jaringan Terbatas).</span>`;
+            }
         }
 
         // Muat default state saat halaman pertama kali dibuka
         window.onload = function() {
-            switchTab('network');
+            switchTab('exercise');
         };
     </script>
 </body>
