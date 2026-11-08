@@ -116,23 +116,23 @@
         <section id="workspace" class="space-y-6 pt-4">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <div class="text-[#00ff66] code-font text-xs uppercase tracking-widest">// Interactive Code Workspace</div>
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">Pilih & Uji Contoh Aplikasi Nyata</h2>
-                <p class="text-gray-400 text-xs sm:text-sm">Klik menu tab di bawah untuk melihat baris kode pembangunnya, lalu tekan tombol RUN untuk menguji pratinjau aplikasinya.</p>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Eksplorasi Halaman & Komponen Profesional</h2>
+                <p class="text-gray-400 text-xs sm:text-sm">Klik menu tab di bawah untuk melihat baris kode halaman profesional, lalu tekan tombol RUN untuk menguji pratinjaunya.</p>
             </div>
 
-            <!-- Menu Tab Navigation -->
+            <!-- Menu Tab Navigation dengan Judul Baru yang Profesional -->
             <div class="flex flex-wrap justify-center gap-2" id="appMenu">
-                <button onclick="switchTab('sherlock')" id="tab-sherlock" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-[#00ff66] bg-[#00ff66]/10 text-[#00ff66] code-font">
-                    🕵️‍♂️ 01. Sherlock OSINT
+                <button onclick="switchTab('landing')" id="tab-landing" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-[#00ff66] bg-[#00ff66]/10 text-[#00ff66] code-font">
+                    🌐 01. Modern Landing Page
                 </button>
                 <button onclick="switchTab('dashboard')" id="tab-dashboard" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font">
-                    ⚡ 02. System Dashboard
+                    ⚡ 02. Cyber Security Dashboard
                 </button>
                 <button onclick="switchTab('auth')" id="tab-auth" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font">
-                    🛡️ 03. Secure Login
+                    🛡️ 03. Secure Authentication
                 </button>
-                <button onclick="switchTab('monitor')" id="tab-monitor" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font">
-                    📊 04. Traffic Monitor
+                <button onclick="switchTab('osint')" id="tab-osint" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-gray-800 bg-black/60 text-gray-400 hover:text-white code-font">
+                    🕵️‍♂️ 04. OSINT Recon Engine
                 </button>
             </div>
 
@@ -142,25 +142,25 @@
                 <!-- Sisi Kiri: Terminal Code Viewer -->
                 <div class="space-y-3 flex flex-col">
                     <div class="flex items-center justify-between text-xs text-gray-400 code-font pb-2 border-b border-gray-800">
-                        <span id="fileName" class="neon-text font-bold">sherlock_osint.py</span>
-                        <span id="fileLang" class="text-gray-500">Python / OSINT</span>
+                        <span id="fileName" class="neon-text font-bold">landing_page.html</span>
+                        <span id="fileLang" class="text-gray-500">HTML5 / Tailwind</span>
                     </div>
                     <div class="flex-grow">
                         <textarea id="codeView" readonly rows="12" class="w-full bg-[#030508] border border-gray-800 rounded-xl p-3 text-xs sm:text-sm text-emerald-300 code-font focus:outline-none resize-none leading-relaxed"></textarea>
                     </div>
                     <button onclick="executeRun()" class="w-full bg-[#00ff66] hover:bg-[#1aff80] text-black font-bold py-3 rounded-xl transition text-xs sm:text-sm shadow-[0_0_15px_rgba(0,255,102,0.4)] code-font">
-                        ▶ RUN CODE & LIHAT PRATINJAU
+                        ▶ RUN CODE & LIHAT PRATINJAU HALAMAN
                     </button>
                 </div>
 
                 <!-- Sisi Kanan: Live App Preview Box -->
                 <div class="space-y-3 flex flex-col">
                     <div class="flex items-center justify-between text-xs text-gray-400 code-font pb-2 border-b border-gray-800">
-                        <span class="text-white font-bold">Pratinjau Aplikasi (Live View)</span>
+                        <span class="text-white font-bold">Pratinjau Halaman (Live View)</span>
                         <span class="w-2 h-2 rounded-full bg-[#00ff66] animate-ping"></span>
                     </div>
                     <div id="previewBox" class="flex-grow bg-[#030508] border border-gray-800 rounded-xl p-4 flex items-center justify-center min-h-[280px] overflow-auto">
-                        <!-- Hasil render aplikasi dinamis masuk ke sini -->
+                        <!-- Hasil render halaman web masuk ke sini -->
                     </div>
                 </div>
 
@@ -199,9 +199,9 @@
         <p>&copy; 2026 ZEEO. All systems nominal. Secure and open source.</p>
     </footer>
 
-    <!-- Script Utama (Matrix Rain + Interactive Workspace Engine) -->
+    <!-- Script Utama (Matrix Rain + Halaman Profesional Engine) -->
     <script>
-        // 1. Inisialisasi Canvas Matrix Rain Background
+        // 1. Matrix Rain Background
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -239,87 +239,85 @@
         }
         setInterval(drawMatrix, 50);
 
-        // 2. Data Contoh Kode & Aplikasi Workspace
+        // 2. Data Contoh Kode Halaman Web Profesional
         const appWorkspaces = {
-            sherlock: {
-                filename: "sherlock_osint.py",
-                lang: "Python / OSINT Script",
-                code: `# OSINT Username Recon Tool (Sherlock Engine)
-import requests
-
-def investigate(username):
-    print(f"[*] Memindai target: {username}")
-    targets = {
-        "GitHub": f"https://github.com/{username}",
-        "Instagram": f"https://instagram.com/{username}",
-        "TikTok": f"https://tiktok.com/@{username}",
-        "Telegram": f"https://t.me/{username}"
-    }
-    for platform, link in targets.items():
-        print(f"[+] Ditemukan di {platform}: {link}")
-
-if __name__ == "__main__":
-    investigate("vektorzero")`
+            landing: {
+                filename: "landing_page.html",
+                lang: "HTML5 / Tailwind CSS",
+                code: `<div style="width: 100%; background: #07090f; border: 1px solid #00ff66; border-radius: 12px; padding: 18px; font-family: 'Inter', sans-serif; color: #fff;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 10px; margin-bottom: 14px;">
+        <span style="font-weight: 700; color: #00ff66; font-size: 13px;">PROJECT // PORTFOLIO</span>
+        <span style="background: rgba(0,255,102,0.15); color: #00ff66; padding: 2px 8px; font-size: 9px; border-radius: 4px; font-family: monospace;">V 2.0</span>
+    </div>
+    <h2 style="font-size: 16px; font-weight: bold; margin: 0 0 6px 0; color: #f3f4f6;">Membangun Masa Depan Digital</h2>
+    <p style="font-size: 11px; color: #94a3b8; line-height: 1.5; margin-bottom: 14px;">Contoh tata letak halaman web profesional yang bersih, responsif, dan elegan menggunakan struktur komponen modern.</p>
+    <div style="display: flex; gap: 8px;">
+        <button onclick="alert('Tombol utama ditekan!')" style="background: #00ff66; color: #000; border: none; padding: 7px 14px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">JELAJAHI</button>
+        <button onclick="alert('Membuka dokumentasi proyek.')" style="background: transparent; color: #d1d5db; border: 1px solid #374151; padding: 7px 14px; font-size: 11px; border-radius: 6px; cursor: pointer;">DOKUMEN</button>
+    </div>
+</div>`
             },
             dashboard: {
                 filename: "cyber_dashboard.html",
-                lang: "HTML / Tailwind CSS",
-                code: `<div style="width: 100%; background: #000; border: 1px solid #00ff66; border-radius: 10px; padding: 14px; font-family: monospace; color: #fff;">
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #111; padding-bottom: 8px; margin-bottom: 10px;">
-        <span style="color: #00ff66; font-weight: bold; font-size: 11px;">⚡ SYSTEM_CONTROL_PANEL</span>
-        <span style="background: rgba(0,255,102,0.2); color: #00ff66; padding: 2px 6px; font-size: 9px; border-radius: 4px;">ACTIVE</span>
+                lang: "HTML5 / Tailwind CSS",
+                code: `<div style="width: 100%; background: #07090f; border: 1px solid #10b981; border-radius: 12px; padding: 18px; font-family: 'Inter', sans-serif; color: #fff;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 10px; margin-bottom: 14px;">
+        <span style="font-weight: 700; color: #34d399; font-size: 13px;">⚡ CYBER SECURITY CONTROL</span>
+        <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 2px 8px; font-size: 9px; border-radius: 4px; font-family: monospace;">SECURE NODE</span>
     </div>
-    <div style="font-size: 11px; color: #9ca3af; line-height: 1.5; margin-bottom: 12px;">
-        <div>> Status Node: <span style="color: #00ff66;">Secure & Encrypted</span></div>
-        <div>> Latency: 12ms (Stable)</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+        <div style="background: #0f172a; padding: 10px; border-radius: 8px; border: 1px solid #1e293b;">
+            <div style="font-size: 9px; color: #64748b;">FIREWALL STATUS</div>
+            <div style="font-size: 12px; font-weight: bold; color: #34d399;">ACTIVE / SHIELD</div>
+        </div>
+        <div style="background: #0f172a; padding: 10px; border-radius: 8px; border: 1px solid #1e293b;">
+            <div style="font-size: 9px; color: #64748b;">THREAT DETECTION</div>
+            <div style="font-size: 12px; font-weight: bold; color: #60a5fa;">0 ANOMALY</div>
+        </div>
     </div>
-    <button onclick="alert('Perintah subsistem berhasil dieksekusi!')" style="width: 100%; background: #00ff66; color: #000; border: none; padding: 7px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">
-        EKSEKUSI DIAGNOSTIK
-    </button>
+    <button onclick="alert('Sistem berhasil melakukan pemindaian menyeluruh.')" style="width: 100%; background: #10b981; color: #0b0f19; border: none; padding: 8px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">JALANKAN SCAN KEAMANAN</button>
 </div>`
             },
             auth: {
-                filename: "secure_login.html",
-                lang: "HTML / Tailwind CSS",
-                code: `<div style="width: 100%; background: #000; border: 1px solid #3b82f6; border-radius: 10px; padding: 14px; font-family: monospace; color: #fff;">
-    <div style="text-align: center; margin-bottom: 12px;">
-        <h4 style="color: #60a5fa; margin: 0 0 4px 0; font-size: 12px;">🔒 SECURE GATEWAY LOGIN</h4>
-        <p style="color: #64748b; font-size: 10px; margin: 0;">Otorisasi tingkat lanjut untuk akses terminal</p>
+                filename: "secure_auth.html",
+                lang: "HTML5 / Tailwind CSS",
+                code: `<div style="width: 100%; background: #07090f; border: 1px solid #3b82f6; border-radius: 12px; padding: 18px; font-family: 'Inter', sans-serif; color: #fff;">
+    <div style="text-align: center; margin-bottom: 14px;">
+        <h3 style="font-weight: 700; color: #60a5fa; font-size: 14px; margin: 0 0 4px 0;">🛡️ SECURE AUTHENTICATION</h3>
+        <p style="font-size: 10px; color: #64748b; margin: 0;">Otorisasi enkripsi tingkat lanjut untuk akses root</p>
     </div>
     <div style="margin-bottom: 10px;">
-        <input type="password" placeholder="Masukkan Secret Token..." style="width: 100%; background: #050505; border: 1px solid #1e3a8a; padding: 7px; font-size: 11px; color: #38bdf8; border-radius: 6px; outline: none; box-sizing: border-box;" />
+        <label style="font-size: 10px; color: #94a3b8; display: block; margin-bottom: 4px;">OPERATOR ID</label>
+        <input type="text" value="zeeo_admin" style="width: 100%; background: #0f172a; border: 1px solid #334155; padding: 8px; font-size: 11px; color: #38bdf8; border-radius: 6px; outline: none; box-sizing: border-box;" />
     </div>
-    <button onclick="alert('Otorisasi diterima. Selamat datang, Operator.')" style="width: 100%; background: #3b82f6; color: #fff; border: none; padding: 7px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">
-        VERIFIKASI TOKEN
-    </button>
+    <div style="margin-bottom: 14px;">
+        <label style="font-size: 10px; color: #94a3b8; display: block; margin-bottom: 4px;">ACCESS TOKEN</label>
+        <input type="password" value="********" style="width: 100%; background: #0f172a; border: 1px solid #334155; padding: 8px; font-size: 11px; color: #38bdf8; border-radius: 6px; outline: none; box-sizing: border-box;" />
+    </div>
+    <button onclick="alert('Otorisasi Diterima! Selamat datang, Administrator.')" style="width: 100%; background: #3b82f6; color: #fff; border: none; padding: 8px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">AUTORISASI SISTEM</button>
 </div>`
             },
-            monitor: {
-                filename: "traffic_metrics.html",
-                lang: "HTML / Tailwind CSS",
-                code: `<div style="width: 100%; background: #000; border: 1px solid #a855f7; border-radius: 10px; padding: 14px; font-family: monospace; color: #fff;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-        <span style="color: #c084fc; font-weight: bold; font-size: 11px;">📊 LIVE TRAFFIC STREAM</span>
-        <span style="color: #a855f7; font-size: 9px;">[Monitoring]</span>
+            osint: {
+                filename: "osint_recon.html",
+                lang: "HTML5 / Tailwind CSS",
+                code: `<div style="width: 100%; background: #07090f; border: 1px solid #a855f7; border-radius: 12px; padding: 18px; font-family: 'Inter', sans-serif; color: #fff;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 10px; margin-bottom: 14px;">
+        <span style="font-weight: 700; color: #c084fc; font-size: 13px;">🕵️‍♂️ OSINT RECON ENGINE</span>
+        <span style="background: rgba(168,85,247,0.15); color: #c084fc; padding: 2px 8px; font-size: 9px; border-radius: 4px; font-family: monospace;">ACTIVE</span>
     </div>
-    <div style="background: #050505; border: 1px solid #2e1065; border-radius: 6px; padding: 8px; font-size: 10px; color: #cbd5e1; margin-bottom: 10px;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-            <span>Inbound Rate:</span>
-            <span style="color: #00ff66;">3.1 MB/s</span>
-        </div>
-        <div style="display: flex; justify-content: space-between;">
-            <span>Active Sessions:</span>
-            <span style="color: #60a5fa;">842 Nodes</span>
-        </div>
+    <p style="font-size: 11px; color: #94a3b8; margin-bottom: 10px;">Masukkan target username untuk investigasi jejak digital publik:</p>
+    <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+        <input type="text" id="osintQuery" value="vektorzero" style="flex: 1; background: #0f172a; border: 1px solid #334155; padding: 7px 10px; font-size: 11px; color: #c084fc; border-radius: 6px; outline: none;" />
+        <button onclick="runProScan()" style="background: #a855f7; color: #fff; border: none; padding: 7px 14px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">RECON</button>
     </div>
-    <button onclick="alert('Statistik traffic diperbarui secara real-time!')" style="width: 100%; background: #a855f7; color: #fff; border: none; padding: 7px; font-weight: bold; font-size: 11px; border-radius: 6px; cursor: pointer;">
-        REFRESH METRIK
-    </button>
+    <div id="proLog" style="background: #000; border: 1px solid #1e293b; border-radius: 6px; padding: 8px; font-size: 10px; color: #fbbf24; height: 75px; overflow-y: auto; font-family: monospace;">
+        > [SYSTEM] Menunggu target pemindaian OSINT...
+    </div>
 </div>`
             }
         };
 
-        let activeTab = 'sherlock';
+        let activeTab = 'landing';
 
         function switchTab(key) {
             activeTab = key;
@@ -329,8 +327,8 @@ if __name__ == "__main__":
             document.getElementById('fileName').innerText = data.filename;
             document.getElementById('fileLang').innerText = data.lang;
 
-            // Perbarui warna status tab aktif
-            ['sherlock', 'dashboard', 'auth', 'monitor'].forEach(k => {
+            // Perbarui gaya tombol tab aktif
+            ['landing', 'dashboard', 'auth', 'osint'].forEach(k => {
                 const btn = document.getElementById(`tab-${k}`);
                 if (k === key) {
                     btn.className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition border border-[#00ff66] bg-[#00ff66]/10 text-[#00ff66] code-font";
@@ -344,44 +342,27 @@ if __name__ == "__main__":
 
         function executeRun() {
             const preview = document.getElementById('previewBox');
-
-            if (activeTab === 'sherlock') {
-                preview.innerHTML = `
-                    <div style="width: 100%; background: #000; border: 1px solid #00ff66; border-radius: 10px; padding: 12px; font-family: monospace; color: #fff;">
-                        <div style="color: #00ff66; font-weight: bold; font-size: 11px; margin-bottom: 6px;">🕵️‍♂️ SHERLOCK OSINT SIMULATOR</div>
-                        <p style="color: #9ca3af; font-size: 10px; margin-bottom: 8px;">Uji coba pelacakan username di platform publik:</p>
-                        <div style="display: flex; gap: 6px; margin-bottom: 8px;">
-                            <input type="text" id="osintInput" value="vektorzero" style="flex: 1; background: #030508; border: 1px solid #1f2937; padding: 5px 8px; font-size: 10px; color: #00ff66; border-radius: 4px; outline: none;" />
-                            <button onclick="runOsintScan()" style="background: #00ff66; color: #000; border: none; padding: 5px 10px; font-weight: bold; font-size: 10px; border-radius: 4px; cursor: pointer;">SCAN</button>
-                        </div>
-                        <div id="osintOut" style="background: #030508; border: 1px solid #111; border-radius: 4px; padding: 6px; font-size: 9px; color: #fbbf24; height: 85px; overflow-y: auto;">
-                            > [SYSTEM] Siap memindai target...
-                        </div>
-                    </div>
-                `;
-            } else {
-                preview.innerHTML = document.getElementById('codeView').value;
-            }
+            preview.innerHTML = document.getElementById('codeView').value;
         }
 
-        async function runOsintScan() {
-            const target = document.getElementById('osintInput').value.trim() || "target";
-            const box = document.getElementById('osintOut');
-            box.innerHTML = `> [+] Menelusuri akun: ${target}...\n`;
+        async function runProScan() {
+            const val = document.getElementById('osintQuery').value.trim() || "target";
+            const log = document.getElementById('proLog');
+            log.innerHTML = `> [+] Menginisialisasi modul pencarian untuk: ${val}...\n`;
 
-            const list = ["GitHub", "Instagram", "TikTok", "Telegram", "Twitter/X"];
-            for (let net of list) {
-                await new Promise(r => setTimeout(r, 200));
-                box.innerHTML += `> [+] <span style="color:#00ff66">${net}:</span> Akun publik terdeteksi aktif!\n`;
-                box.scrollTop = box.scrollHeight;
+            const nets = ["GitHub Public", "Instagram Graph", "TikTok Metadata", "Telegram Handle"];
+            for (let n of nets) {
+                await new Promise(r => setTimeout(r, 220));
+                log.innerHTML += `> [+] <span style="color:#34d399">${n}:</span> Ditemukan indeks publik aktif!\n`;
+                log.scrollTop = log.scrollHeight;
             }
-            box.innerHTML += `> [DONE] Pemindaian selesai.`;
-            box.scrollTop = box.scrollHeight;
+            log.innerHTML += `> [SUCCESS] Investigasi profil selesai secara akurat.`;
+            log.scrollTop = log.scrollHeight;
         }
 
-        // Jalankan default saat pertama kali dimuat
+        // Muat default saat halaman pertama kali dibuka
         window.onload = function() {
-            switchTab('sherlock');
+            switchTab('landing');
         };
     </script>
 </body>
